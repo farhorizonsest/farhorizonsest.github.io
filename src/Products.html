@@ -1,0 +1,59 @@
+---
+layout: base.njk
+title: Travel Shop
+---
+
+<style>
+    .prod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+    .prod-card { background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow-card); transition: 0.3s; }
+    .prod-card:hover { transform: translateY(-5px); }
+    .prod-img { height: 150px; background: #f4f4f4; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; border-radius: 8px; }
+    .prod-price { color: var(--accent-color); font-weight: bold; font-size: 1.2rem; display: block; margin: 10px 0; }
+    .btn-wa { background: #25D366; color: white; padding: 8px 15px; border-radius: 5px; font-size: 0.9rem; display: inline-block; }
+    .btn-wa:hover { background: #1ebc57; }
+</style>
+
+<section class="hero" style="height: 40vh; min-height: 300px;">
+    <h1>Travel Essentials</h1>
+    <p>Gear up for your next adventure.</p>
+</section>
+
+<section>
+    <div class="prod-grid">
+        <div class="prod-card">
+            <div class="prod-img"><i class="fas fa-suitcase-rolling fa-3x" style="color:#ccc;"></i></div>
+            <h4>Travel Suitcase</h4>
+            <span class="prod-price">SAR 250</span>
+            <a href="https://wa.me/966500000000?text=I%20want%20to%20buy%20Travel%20Suitcase" target="_blank" class="btn-wa">
+                <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+            </a>
+        </div>
+
+        <div class="prod-card">
+            <div class="prod-img"><i class="fas fa-headphones fa-3x" style="color:#ccc;"></i></div>
+            <h4>Noise Cancelling Headphones</h4>
+            <span class="prod-price">SAR 300</span>
+            <a href="https://wa.me/966500000000?text=I%20want%20to%20buy%20Headphones" target="_blank" class="btn-wa">
+                <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+            </a>
+        </div>
+
+        <div class="prod-card">
+            <div class="prod-img"><i class="fas fa-pillow fa-3x" style="color:#ccc;"></i></div>
+            <h4>Neck Pillow</h4>
+            <span class="prod-price">SAR 45</span>
+            <a href="https://wa.me/966500000000?text=I%20want%20to%20buy%20Neck%20Pillow" target="_blank" class="btn-wa">
+                <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+            </a>
+        </div>
+
+            <div class="prod-card">
+            <div class="prod-img"><i class="fas fa-plug fa-3x" style="color:#ccc;"></i></div>
+            <h4>Universal Adapter</h4>
+            <span class="prod-price">SAR 30</span>
+            <a href="https://wa.me/966500000000?text=I%20want%20to%20buy%20Adapter" target="_blank" class="btn-wa">
+                <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+            </a>
+        </div>
+    </div>
+</section>

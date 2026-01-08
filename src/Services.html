@@ -1,0 +1,53 @@
+---
+layout: base.njk
+title: Our Services
+---
+
+<style>
+    .service-row { display: flex; align-items: center; gap: 50px; margin-bottom: 80px; }
+    .service-row:nth-child(even) { flex-direction: row-reverse; }
+    .srv-text { flex: 1; }
+    .srv-img { flex: 1; height: 300px; background: #ddd; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #aaa; box-shadow: var(--shadow-card); }
+    .srv-icon { color: var(--accent-color); font-size: 2rem; margin-bottom: 15px; }
+    @media (max-width: 768px) { .service-row, .service-row:nth-child(even) { flex-direction: column; } .srv-img { width: 100%; } }
+</style>
+
+<section class="hero" style="height: 40vh; min-height: 300px;">
+    <h1>World Class Services</h1>
+    <p>Comprehensive travel solutions designed for your comfort.</p>
+</section>
+
+<section>
+    <div class="service-row">
+        <div class="srv-text">
+            <i class="fas fa-plane-departure srv-icon"></i>
+            <h2>Flight Reservations</h2>
+            <p>We provide instant booking for domestic and international flights on over 500 airlines. Whether it's Economy, Business, or First Class, we guarantee the best routes and prices.</p>
+        </div>
+        <div class="srv-img"><i class="fas fa-plane"></i></div>
+    </div>
+
+    <div class="service-row">
+        <div class="srv-text">
+            <i class="fas fa-hotel srv-icon"></i>
+            <h2>Luxury Accommodation</h2>
+            <p>From boutique hotels in Paris to beach resorts in the Maldives. Our partnership with global hotel chains ensures you get VIP treatment and exclusive rates.</p>
+        </div>
+        <div class="srv-img"><i class="fas fa-hotel"></i></div>
+    </div>
+
+    <div class="service-row">
+        <div class="srv-text">
+            <i class="fas fa-passport srv-icon"></i>
+            <h2>Visa Assistance</h2>
+            <p>Don't let paperwork ruin your trip. Our experts handle the complexities of Schengen, UK, US, and Asian visas, ensuring a high approval rate.</p>
+        </div>
+        <div class="srv-img"><i class="fas fa-stamp"></i></div>
+    </div>
+</section>
+
+<section style="background: var(--primary-color); color: #fff; text-align: center;">
+    <h2>Ready to Fly?</h2>
+    <p style="margin-bottom: 20px; opacity: 0.8;">Contact us today and let us handle the details.</p>
+    <a href="/Contact_Us.html" class="btn-main">Book a Service</a>
+</section>

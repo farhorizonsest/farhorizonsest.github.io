@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Far Horizons</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Specific Styles for the Booking Form */
+        .contact-container {
+            display: flex; flex-wrap: wrap; gap: 40px;
+            max-width: 1300px; margin: 50px auto; padding: 0 5%;
+        }
+        .contact-info { flex: 1; min-width: 300px; }
+        
+        .booking-wrapper {
+            flex: 2; min-width: 300px;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Gold Top Bar */
+        .booking-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 20px 30px;
+            border-bottom: 4px solid var(--accent-color);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .booking-form { padding: 30px; }
+        
+        /* Grid Layout for Form */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .full-width { grid-column: 1 / -1; }
+
+        .form-group label {
+            display: block; margin-bottom: 8px;
+            font-size: 0.9rem; font-weight: bold; color: #555;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 12px;
+            border: 1px solid #ddd; border-radius: 8px;
+            background: #fdfdfd; transition: 0.3s;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.1);
+        }
+
+        /* Section Dividers */
+        .form-section-title {
+            grid-column: 1 / -1;
+            margin-top: 15px; margin-bottom: 5px;
+            color: var(--accent-color);
+            font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 5px;
+        }
+
+        /* Success Message */
+        #success-msg {
+            display: none; background: #d4edda; color: #155724;
+            padding: 20px; text-align: center; border-radius: 8px; margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="en">
+
+	<header>
+        <div class="logo">
+            <i class="fas fa-paper-plane"></i>
+            <div class="en-font">Far <span>Horizons</span></div>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <a href="Services.html" data-i18n="nav.services">Services</a>
+            <a href="Packages.html" data-i18n="nav.packages">Packages</a>
+            <a href="Products.html" data-i18n="nav.shop">Shop</a>
+            <a href="About_Us.html" data-i18n="nav.about">About</a>
+            <a href="Contact_Us.html" data-i18n="nav.contact">Contact</a>
+        </nav>
+
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <button class="lang-btn" onclick="toggleLanguage()">
+                <i class="fas fa-globe"></i> <span id="lang-text" data-i18n="nav.lang_btn">العربية</span>
+            </button>
+            
+            <div class="menu-toggle" style="display: none;">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" style="height: 40vh; min-height: 300px;">
+        <h1 data-i18n="nav.contact">Contact Us</h1>
+        <p>We are here to help you plan your next adventure.</p>
+    </section>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2 style="color: var(--primary-color); margin-bottom: 20px;" data-i18n="footer.col_contact">Contact Us</h2>
+            <div style="margin-bottom: 20px;">
+                <i class="fas fa-phone-alt" style="color: var(--accent-color); width: 30px;"></i>
+                <span class="en-font">+966 50 000 0000</span>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <i class="fas fa-envelope" style="color: var(--accent-color); width: 30px;"></i>
+                <span class="en-font">info@farhorizons.sa</span>
+            </div>
+            
+            <div style="background: #f4f4f4; padding: 20px; border-radius: 10px; margin-top: 30px;">
+                <h4 style="margin-bottom: 10px; color:var(--primary-color);">Note:</h4>
+                <p style="font-size: 0.9rem;">
+                    After submitting this form, our team will verify availability and send you an invoice via WhatsApp or Email. Payment is required to confirm the booking.
+                </p>
+            </div>
+        </div>
+
+        <div class="booking-wrapper">
+            <div class="booking-header">
+                <h3 data-i18n="form.title">Booking Request</h3>
+                <i class="fas fa-plane-departure fa-2x"></i>
+            </div>
+            
+            <div class="booking-form">
+                <form id="bookingForm" onsubmit="submitToGoogle(event)">
+                    
+                    <div class="form-grid">
+                        <h4 class="form-section-title"><i class="fas fa-route"></i> Itinerary Details</h4>
+
+                        <div class="form-group">
+                            <label data-i18n="form.trip_type">Trip Type</label>
+                            <select name="entry.370442954" id="tripType" onchange="toggleReturnDate()">
+                                <option value="One Way" data-i18n="form.trip_one">One Way</option>
+                                <option value="Round Trip" data-i18n="form.trip_round">Round Trip</option>
+                                <option value="Multi-City" data-i18n="form.trip_multi">Multi-City</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="form.class">Cabin Class</label>
+                            <select name="entry.184227000">
+                                <option value="Economy">Economy</option>
+                                <option value="Premium Economy">Premium Economy</option>
+                                <option value="Business">Business</option>
+                                <option value="First Class">First Class</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="form.from">Departure City</label>
+                            <input type="text" name="entry.244243532" required placeholder="Riyadh (RUH)">
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="form.to">Arrival City</label>
+                            <input type="text" name="entry.1505842113" required placeholder="London (LHR)">
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="form.date_dept">Departure Date</label>
+                            <input type="date" name="entry.1224021015" required>
+                        </div>
+
+                        <div class="form-group" id="returnDateGroup" style="display:none;">
+                            <label data-i18n="form.date_ret">Return Date</label>
+                            <input type="date" name="entry.622576097">
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="form.passengers">Passengers</label>
+                            <input type="text" name="entry.337838499" placeholder="e.g. 2 Adults, 1 Child" required>
+                        </div>
+
+
+                        <h4 class="form-section-title"><i class="fas fa-user"></i> Passenger Details</h4>
+
+                        <div class="form-group full-width">
+                            <label data-i18n="form.fullname">Full Name</label>
+                            <input type="text" name="entry.1145440639" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="form.phone">Phone</label>
+                            <input type="tel" name="entry.650094071" required class="en-font">
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="form.email">Email</label>
+                            <input type="email" name="entry.757915593" required class="en-font">
+                        </div>
+
+                        <h4 class="form-section-title"><i class="fas fa-passport"></i> Official Data</h4>
+
+                        <div class="form-group">
+                            <label data-i18n="form.nationality">Nationality</label>
+                            <input type="text" name="entry.446822806" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="form.passport">Passport No</label>
+                            <input type="text" name="entry.896772408" required class="en-font">
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="form.pp_expiry">Expiry Date</label>
+                            <input type="date" name="entry.190360085" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="form.dob">Date of Birth</label>
+                            <input type="date" name="entry.1836990541" required>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label data-i18n="form.notes">Special Requests</label>
+                            <textarea name="entry.1959872862" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px;">
+                        <button type="submit" class="btn-main" style="width:100%; font-size:1.1rem;" data-i18n="form.btn_submit">Submit Booking Request</button>
+                    </div>
+
+                </form>
+
+                <div id="success-msg" style="display:none;">
+					<div style="text-align: center; margin-bottom: 20px; color: #155724;">
+						<i class="fas fa-check-circle fa-2x"></i>
+						<h3 style="margin-top:10px;">Request Received! Here is your Ticket Preview:</h3>
+					</div>
+
+					<div class="ticket-wrapper" style="display:block;">
+						<div class="boarding-pass">
+							
+							<div class="pass-main">
+								<div class="pass-header">
+									<div class="airline-name"><i class="fas fa-paper-plane"></i> FAR <span>HORIZONS</span></div>
+									<div class="flight-class" id="ticket-class">ECONOMY</div>
+								</div>
+								
+								<div class="pass-route">
+									<div>
+										<div class="airport-code" id="ticket-from-code">RUH</div>
+										<div class="airport-city" id="ticket-from-city">RIYADH</div>
+									</div>
+									<div class="plane-icon"><i class="fas fa-plane"></i></div>
+									<div style="text-align: right;">
+										<div class="airport-code" id="ticket-to-code">LHR</div>
+										<div class="airport-city" id="ticket-to-city">LONDON</div>
+									</div>
+								</div>
+
+								<div class="pass-details">
+									<div class="detail-item">
+										<label>Passenger Name</label>
+										<span id="ticket-name">AL DERA / ABDULLAH</span>
+									</div>
+									<div class="detail-item">
+										<label>Date</label>
+										<span id="ticket-date">12 DEC</span>
+									</div>
+									<div class="detail-item">
+										<label>Flight No</label>
+										<span>FH-2026</span>
+									</div>
+									<div class="detail-item">
+										<label>Gate</label>
+										<span>A04</span>
+									</div>
+								</div>
+								
+								<div class="barcode"></div>
+							</div>
+
+							<div class="pass-stub">
+								<div class="stub-header">
+									<div class="airline-name" style="color:var(--primary-color); font-size:0.9rem;">FAR <span>HORIZONS</span></div>
+								</div>
+								<div class="stub-route">
+									<span id="stub-from">RUH</span>
+									<i class="fas fa-plane" style="font-size:0.8rem; color:#ccc;"></i>
+									<span id="stub-to">LHR</span>
+								</div>
+								<div class="stub-item">
+									<span>Passenger</span>
+									<strong id="stub-name" style="max-width: 80px; overflow: hidden; white-space: nowrap;">AL DERA</strong>
+								</div>
+								<div class="stub-item">
+									<span>Date</span>
+									<strong id="stub-date">12 DEC</strong>
+								</div>
+								<div class="stub-item">
+									<span>Seat</span>
+									<strong>--</strong>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #666;">
+						*This is a preview confirmation. Your official e-ticket will be sent via WhatsApp/Email after payment.
+					</p>
+				</div>
+            </div>
+        </div>
+    </div>
+	<footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="#" class="footer-logo"><i class="fas fa-paper-plane"></i> <span class="en-font">Far <span>Horizons</span></span></a>
+                <p class="footer-desc" data-i18n="footer.desc">
+                    Your trusted partner for exploring the world.
+                </p>
+                <div class="shop-now-box">
+                    <h4 data-i18n="footer.shop_title">Travel Essentials Store</h4>
+                    <p style="font-size: 0.8rem; opacity: 0.9;" data-i18n="footer.shop_sub">Bags, Adapters, Pillows & More</p>
+                    <a href="Products.html" class="shop-now-btn" data-i18n="footer.shop_btn">Shop Now</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 data-i18n="footer.col_links">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Home</span></a></li>
+                    <li><a href="About_Us.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">About Us</span></a></li>
+                    <li><a href="Products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.shop">Shop</span></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 data-i18n="footer.col_services">Services</h3>
+                <ul class="footer-links">
+                    <li><a href="Services.html"><i class="fas fa-chevron-right"></i> <span data-i18n="services.flight">Flight</span></a></li>
+                    <li><a href="Services.html"><i class="fas fa-chevron-right"></i> <span data-i18n="services.hotel">Hotel</span></a></li>
+                    <li><a href="Services.html"><i class="fas fa-chevron-right"></i> <span data-i18n="services.visa">Visa</span></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 data-i18n="footer.col_contact">Contact Us</h3>
+                <div class="contact-row">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong class="en-font">Riyadh, Saudi Arabia</strong>
+                    </div>
+                </div>
+                <div class="contact-row">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="en-font">
+                        +966 50 000 0000
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 data-i18n="footer.col_hours">Opening Hours</h3>
+                <ul style="margin-bottom: 20px;" class="en-font">
+                    <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px;">
+                        <span>Sun - Thu:</span> <span style="color: var(--accent-color);">09:00 - 22:00</span>
+                    </li>
+                    <li style="display: flex; justify-content: space-between;">
+                        <span>Friday:</span> <span style="color: var(--accent-color);">16:00 - 23:00</span>
+                    </li>
+                </ul>
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2026 <strong>Far Horizons</strong>. <span data-i18n="footer.rights">All Rights Reserved.</span></p>
+            <p style="opacity: 0.3; font-size: 0.75rem; margin-top: 5px;">Developed by MH Studios™ - Plan B Initiative</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Logic to Toggle Return Date based on Trip Type
+        function toggleReturnDate() {
+            const tripType = document.getElementById('tripType').value;
+            const returnGroup = document.getElementById('returnDateGroup');
+            
+            if (tripType === 'One Way') {
+                returnGroup.style.display = 'none';
+            } else {
+                returnGroup.style.display = 'block';
+            }
+        }
+
+        // Logic to Send Data to Google Forms Silently
+        function submitToGoogle(e) {
+		e.preventDefault();
+		const form = document.getElementById('bookingForm');
+		const btn = form.querySelector('button');
+		
+		// 1. Grab User Data
+		const bookingData = {
+			name: form.querySelector('input[name="entry.1145440639"]').value.toUpperCase(),
+			phone: form.querySelector('input[name="entry.650094071"]').value,
+			email: form.querySelector('input[name="entry.757915593"]').value,
+			from: form.querySelector('input[name="entry.244243532"]').value.toUpperCase(),
+			to: form.querySelector('input[name="entry.1505842113"]').value.toUpperCase(),
+			date: form.querySelector('input[name="entry.1224021015"]').value,
+			cabin: form.querySelector('select[name="entry.184227000"]').value.toUpperCase(),
+			ref: "FH-" + Math.floor(1000 + Math.random() * 9000) // Generate random Ref ID
+		};
+
+		// 2. Save to LocalStorage (The "Memory" Trick)
+		localStorage.setItem('fh_latest_booking', JSON.stringify(bookingData));
+
+		// 3. Send to Google (The Silent Backend)
+		const GOOGLE_URL = "https://docs.google.com/forms/d/e/1FAIpQLScs9MFdz8dqJpdthxzrZZUyXDoHAagF9u2WHkGhAI6j3LzvoQ/formResponse";
+		const formData = new FormData(form);
+		
+		btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+		btn.style.opacity = '0.7';
+
+		fetch(GOOGLE_URL, {
+			method: 'POST',
+			mode: 'no-cors', 
+			body: formData
+		}).then(() => {
+			// 4. Redirect to the Invoice Page
+			window.location.href = 'invoice.html';
+		}).catch(err => {
+			alert("Connection Error. Please check internet.");
+			btn.innerHTML = 'Try Again';
+		});
+	}
+    </script>
+</body>
+</html>

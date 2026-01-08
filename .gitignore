@@ -1,0 +1,12 @@
+# --- Security (NEVER UPLOAD THESE) ---
+credentials.json
+token.json
+.env
+
+# --- System & Dependencies ---
+node_modules/
+.DS_Store
+Thumbs.db
+
+# --- Build Folders ---
+_site/

@@ -1,0 +1,63 @@
+---
+layout: base.njk
+title: About Us
+---
+
+<style>
+    .stats-container {
+        display: flex; justify-content: center; gap: 50px; margin-top: 50px; flex-wrap: wrap;
+    }
+    .stat-box { text-align: center; }
+    .stat-num { font-size: 2.5rem; font-weight: bold; color: var(--accent-color); display: block; }
+    .stat-label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+    
+    .story-section { max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.8; }
+</style>
+
+<section class="hero" style="height: 40vh; min-height: 300px;">
+    <h1>Our Story</h1>
+    <p>Bridging cultures, one flight at a time.</p>
+</section>
+
+<section>
+    <div class="story-section">
+        <h2 style="color:var(--primary-color); margin-bottom: 20px;">Who We Are</h2>
+        <p style="margin-bottom: 20px;">
+            Founded with a vision to revolutionize the travel industry in Saudi Arabia, <strong>Far Horizons</strong> has established itself as a beacon of reliability and luxury. We are not just a travel agency; we are architects of memories.
+        </p>
+        <p>
+            From humble beginnings as a ticketing office, we have expanded into a full-service travel management company, serving thousands of happy travelers across the Kingdom and beyond.
+        </p>
+    </div>
+
+    <div class="stats-container">
+        <div class="stat-box">
+            <span class="stat-num en-font">5,000+</span>
+            <span class="stat-label">Tickets Issued</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-num en-font">1,200+</span>
+            <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-num en-font">50+</span>
+            <span class="stat-label">Destinations</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-num en-font">24/7</span>
+            <span class="stat-label">Support</span>
+        </div>
+    </div>
+</section>
+
+<section style="background: var(--light-bg); text-align: center;">
+    <h2>Our Team</h2>
+    <p style="max-width: 600px; margin: 0 auto 30px auto;">Meet the experts behind your seamless journeys.</p>
+    <div class="grid-3">
+        <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: var(--shadow-card);">
+            <div style="height: 100px; width: 100px; background: #ddd; border-radius: 50%; margin: 0 auto 15px auto;"></div>
+            <h4>Abdullah Al Dera</h4>
+            <p style="color: var(--accent-color); font-size: 0.9rem;">CEO & Founder</p>
+        </div>
+    </div>
+</section>

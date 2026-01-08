@@ -1,0 +1,94 @@
+{
+    "nav": {
+        "home": "Home",
+        "services": "Services",
+        "packages": "Packages",
+        "shop": "Shop",
+        "about": "About",
+        "contact": "Contact",
+        "lang_btn": "العربية"
+    },
+    "hero": {
+        "title_1": "Explore the World",
+        "title_2": "Beyond Boundaries",
+        "desc": "Your premium gateway to flight bookings, luxury hotels, and seamless travel experiences. From Riyadh to the world, we make every journey unforgettable.",
+        "btn_book": "Book a Trip",
+        "btn_story": "Our Story"
+    },
+    "identity": {
+        "header": "Who We Are",
+        "sub": "Leading the way in Saudi Tourism with innovation and excellence.",
+        "vision_title": "Our Vision",
+        "vision_desc": "To become the leading travel agency in the Kingdom, bridging cultures and creating timeless memories.",
+        "mission_title": "Our Mission",
+        "mission_desc": "Providing hassle-free, comprehensive travel solutions including ticketing and accommodation.",
+        "values_title": "Our Values",
+        "values_desc": "Integrity, Customer Obsession, Innovation, and Excellence."
+    },
+    "services": {
+        "header": "Our Premium Services",
+        "sub": "Everything you need for a perfect trip, under one roof.",
+        "flight": "Flight Booking",
+        "flight_desc": "Domestic & International flights at best rates.",
+        "hotel": "Hotel Reservations",
+        "hotel_desc": "From budget stays to 5-star luxury resorts.",
+        "visa": "Visa Assistance",
+        "visa_desc": "Professional guidance for Schengen, US, UK.",
+        "transport": "Transport",
+        "transport_desc": "Airport pickups and VIP car rentals."
+    },
+    "why_us": {
+        "header": "Why Choose Far Horizons?",
+        "title": "A Legacy of Trust",
+        "p1": "Established to serve the growing needs of travelers in Saudi Arabia, Far Horizons has quickly grown from a local ticketing office to a full-service travel management company.",
+        "p2": "We understand that travel is not just about moving from point A to point B; it's about the experience.",
+        "list_1": "Certified IATA Members",
+        "list_2": "24/7 Customer Support",
+        "list_3": "Exclusive Corporate Deals"
+    },
+    "packages": {
+        "header": "Trending Packages",
+        "sub": "Handpicked destinations for this season.",
+        "pkg1_title": "Maldives Luxury Escape",
+        "pkg1_feat": "5 Days / 4 Nights",
+        "pkg2_title": "Istanbul Cultural Tour",
+        "pkg2_feat": "6 Days / 5 Nights",
+        "pkg3_title": "Paris & Swiss Alps",
+        "pkg3_feat": "8 Days / 7 Nights",
+        "book_btn": "Book Now"
+    },
+    "footer": {
+        "desc": "Your trusted partner for exploring the world. We provide end-to-end travel solutions tailored to your needs.",
+        "shop_title": "Travel Essentials Store",
+        "shop_sub": "Bags, Adapters, Pillows & More",
+        "shop_btn": "Shop Now",
+        "col_links": "Quick Links",
+        "col_services": "Services",
+        "col_contact": "Contact Us",
+        "col_hours": "Opening Hours",
+        "rights": "All Rights Reserved."
+    },
+    "form": {
+        "title": "Booking Request",
+        "trip_type": "Trip Type",
+        "trip_one": "One Way",
+        "trip_round": "Round Trip",
+        "trip_multi": "Multi-City",
+        "from": "Departure City",
+        "to": "Arrival City",
+        "date_dept": "Departure Date",
+        "date_ret": "Return Date",
+        "class": "Cabin Class",
+        "passengers": "Passengers",
+        "fullname": "Full Name (As on Passport)",
+        "phone": "Phone Number",
+        "email": "Email Address",
+        "nationality": "Nationality",
+        "passport": "Passport Number",
+        "pp_expiry": "Passport Expiry",
+        "dob": "Date of Birth",
+        "notes": "Special Requests",
+        "btn_submit": "Submit Booking Request",
+        "success": "Request Sent Successfully! We will contact you shortly."
+    }
+}

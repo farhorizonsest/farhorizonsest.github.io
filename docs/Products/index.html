@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Shop | Far Horizons</title>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    
+</head>
+<body class="en">
+
+    <header>
+        <div class="logo">
+            <i class="fas fa-paper-plane"></i>
+            <div class="en-font">Far <span>Horizons</span></div>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="/index.html" data-i18n="nav.home">Home</a>
+            <a href="/Services.html" data-i18n="nav.services">Services</a>
+            <a href="/Packages.html" data-i18n="nav.packages">Packages</a>
+            <a href="/Products.html" data-i18n="nav.shop">Shop</a>
+            <a href="/About_Us.html" data-i18n="nav.about">About</a>
+            <a href="/Contact_Us.html" data-i18n="nav.contact">Contact</a>
+        </nav>
+
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <button class="lang-btn" onclick="toggleLanguage()">
+                <i class="fas fa-globe"></i> <span id="lang-text" data-i18n="nav.lang_btn">العربية</span>
+            </button>
+            <div class="menu-toggle" style="display: none;">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+<style>
+    .prod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+    .prod-card { background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow-card); transition: 0.3s; }
+    .prod-card:hover { transform: translateY(-5px); }
+    .prod-img { height: 150px; background: #f4f4f4; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; border-radius: 8px; }
+    .prod-price { color: var(--accent-color); font-weight: bold; font-size: 1.2rem; display: block; margin: 10px 0; }
+    .btn-wa { background: #25D366; color: white; padding: 8px 15px; border-radius: 5px; font-size: 0.9rem; display: inline-block; }
+    .btn-wa:hover { background: #1ebc57; }
+</style>
+
+<section class="hero" style="height: 40vh; min-height: 300px;">
+    <h1>Travel Essentials</h1>
+    <p>Gear up for your next adventure.</p>
+</section>
+
+<section>
+    <div class="prod-grid">
+        <div class="prod-card">
+            <div class="prod-img"><i class="fas fa-suitcase-rolling fa-3x" style="color:#ccc;"></i></div>
+            <h4>Travel Suitcase</h4>
+            <span class="prod-price">SAR 250</span>
+            <a href="https://wa.me/966500000000?text=I%20want%20to%20buy%20Travel%20Suitcase" target="_blank" class="btn-wa">
+                <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+            </a>
+        </div>
+
+        <div class="prod-card">
+            <div class="prod-img"><i class="fas fa-headphones fa-3x" style="color:#ccc;"></i></div>
+            <h4>Noise Cancelling Headphones</h4>
+            <span class="prod-price">SAR 300</span>
+            <a href="https://wa.me/966500000000?text=I%20want%20to%20buy%20Headphones" target="_blank" class="btn-wa">
+                <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+            </a>
+        </div>
+
+        <div class="prod-card">
+            <div class="prod-img"><i class="fas fa-pillow fa-3x" style="color:#ccc;"></i></div>
+            <h4>Neck Pillow</h4>
+            <span class="prod-price">SAR 45</span>
+            <a href="https://wa.me/966500000000?text=I%20want%20to%20buy%20Neck%20Pillow" target="_blank" class="btn-wa">
+                <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+            </a>
+        </div>
+
+            <div class="prod-card">
+            <div class="prod-img"><i class="fas fa-plug fa-3x" style="color:#ccc;"></i></div>
+            <h4>Universal Adapter</h4>
+            <span class="prod-price">SAR 30</span>
+            <a href="https://wa.me/966500000000?text=I%20want%20to%20buy%20Adapter" target="_blank" class="btn-wa">
+                <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="#" class="footer-logo"><i class="fas fa-paper-plane"></i> <span class="en-font">Far <span>Horizons</span></span></a>
+                <p class="footer-desc" data-i18n="footer.desc">
+                    Your trusted partner for exploring the world.
+                </p>
+                <div class="shop-now-box">
+                    <h4 data-i18n="footer.shop_title">Travel Essentials Store</h4>
+                    <p style="font-size: 0.8rem; opacity: 0.9;" data-i18n="footer.shop_sub">Bags, Adapters, Pillows & More</p>
+                    <a href="/Products/" class="shop-now-btn" data-i18n="footer.shop_btn">Shop Now</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3 data-i18n="footer.col_links">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/index/"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Home</span></a></li>
+                    <li><a href="/About_Us/"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">About Us</span></a></li>
+                    <li><a href="/Products/"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.shop">Shop</span></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 data-i18n="footer.col_contact">Contact Us</h3>
+                <div class="contact-row"><i class="fas fa-map-marker-alt"></i> <strong class="en-font">Riyadh, Saudi Arabia</strong></div>
+                <div class="contact-row"><i class="fas fa-phone-alt"></i> <div class="en-font">+966 50 000 0000</div></div>
+            </div>
+
+            <div class="footer-col">
+                <h3 data-i18n="footer.col_hours">Opening Hours</h3>
+                <ul class="en-font">
+                    <li style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>Sun - Thu:</span> <span style="color:var(--accent-color);">09:00 - 22:00</span></li>
+                    <li style="display:flex; justify-content:space-between;"><span>Friday:</span> <span style="color:var(--accent-color);">16:00 - 23:00</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 <strong>Far Horizons</strong>. <span data-i18n="footer.rights">All Rights Reserved.</span></p>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+    
+</body>
+</html>

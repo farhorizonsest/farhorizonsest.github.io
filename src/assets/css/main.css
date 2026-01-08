@@ -1,0 +1,337 @@
+/* =========================================
+   1. CORE SETUP & FONTS
+   ========================================= */
+@font-face {
+    font-family: 'Janna LT';
+    src: url('../webfonts/arbfonts-janna-lt-regular-webfont.woff2') format('woff2'),
+         url('../webfonts/arbfonts-janna-lt-regular-webfont.woff') format('woff');
+    font-weight: normal; font-style: normal; font-display: swap;
+}
+
+@font-face {
+    font-family: 'Uni Sans';
+    src: url('../webfonts/uni_sans_heavy-webfont.woff2') format('woff2');
+    font-weight: bold; font-style: normal; font-display: swap;
+}
+
+:root {
+    --primary-color: #0f1c2e; /* Darker Navy */
+    --accent-color: #d4af37;  /* Metallic Gold */
+    --accent-hover: #b59021;
+    --text-dark: #222222;
+    --text-light: #666666;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --dark-footer: #0b131e;
+    --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 20px rgba(212, 175, 55, 0.3);
+    --radius: 12px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--white);
+    color: var(--text-dark);
+    /* Default to LTR for English Version */
+    direction: ltr; 
+    text-align: left;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Typography Assignments */
+body.en { font-family: 'Uni Sans', 'Segoe UI', sans-serif; }
+body.ar { font-family: 'Janna LT', sans-serif; }
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Uni Sans', sans-serif; letter-spacing: 0.5px; }
+p { font-family: 'Segoe UI', Tahoma, sans-serif; font-weight: 400; }
+
+a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+ul { list-style: none; }
+
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
+header {
+    position: fixed; top: 0; width: 100%; height: 85px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 4%; z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+}
+
+.logo {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 1.8rem; font-weight: 800; color: var(--primary-color);
+    text-transform: uppercase; letter-spacing: 1px;
+}
+.logo i { color: var(--accent-color); font-size: 2rem; }
+
+.nav-links { display: flex; gap: 30px; align-items: center; }
+.nav-links a {
+    font-size: 0.9rem; font-weight: 600; text-transform: uppercase;
+    color: var(--primary-color); position: relative;
+}
+.nav-links a::after {
+    content: ''; position: absolute; width: 0; height: 2px;
+    bottom: -5px; left: 0; background: var(--accent-color);
+    transition: 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-links a:hover { color: var(--accent-color); }
+
+/* Language Switcher Button */
+.lang-btn {
+    border: 2px solid var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    display: flex; align-items: center; gap: 8px;
+    cursor: pointer;
+}
+.lang-btn:hover { background: var(--primary-color); color: var(--white); }
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+.hero {
+    height: 100vh;
+    background: linear-gradient(to right, rgba(15, 28, 46, 0.9), rgba(15, 28, 46, 0.4)), 
+                url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1920'); /* Placeholder URL */
+    background-size: cover; background-position: center;
+    background-attachment: fixed;
+    color: var(--white);
+    display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+    padding: 0 10%;
+    position: relative;
+}
+
+.hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; max-width: 800px; }
+.hero h1 span { color: var(--accent-color); }
+.hero p { font-size: 1.2rem; margin-bottom: 40px; max-width: 600px; color: #ddd; }
+
+.btn-group { display: flex; gap: 20px; }
+.btn-main {
+    background: var(--accent-color); color: var(--white);
+    padding: 15px 40px; border-radius: 5px; font-weight: bold;
+    text-transform: uppercase; letter-spacing: 1px;
+    box-shadow: var(--shadow-glow); border: none; cursor: pointer;
+}
+.btn-main:hover { background: var(--white); color: var(--primary-color); transform: translateY(-3px); }
+
+.btn-glass {
+    background: rgba(255,255,255,0.1); border: 2px solid var(--white);
+    color: var(--white); padding: 15px 40px; border-radius: 5px;
+    font-weight: bold; text-transform: uppercase; cursor: pointer;
+}
+.btn-glass:hover { background: var(--white); color: var(--primary-color); }
+
+/* =========================================
+   4. CORPORATE & SECTIONS
+   ========================================= */
+section { padding: 100px 8%; }
+.bg-light { background-color: var(--light-bg); }
+
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header h2 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
+.section-header p { color: var(--text-light); max-width: 600px; margin: 0 auto; }
+.divider { height: 4px; width: 80px; background: var(--accent-color); margin: 20px auto; border-radius: 2px; }
+
+/* Cards */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
+
+.feature-box {
+    background: var(--white); padding: 40px 30px;
+    border-radius: var(--radius); text-align: center;
+    box-shadow: var(--shadow-card); transition: 0.4s;
+    border-bottom: 5px solid transparent;
+}
+.feature-box:hover { transform: translateY(-10px); border-bottom-color: var(--accent-color); }
+.feature-box i { font-size: 3rem; color: var(--accent-color); margin-bottom: 25px; }
+.feature-box h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-color); }
+.feature-box p { color: var(--text-light); font-size: 0.95rem; }
+
+/* Packages */
+.package-card {
+    background: var(--white); border-radius: var(--radius); overflow: hidden;
+    box-shadow: var(--shadow-card); position: relative;
+    transition: 0.4s;
+}
+.package-card:hover { transform: translateY(-10px); }
+.pkg-img-box { height: 250px; background: #eee; position: relative; }
+.pkg-badge {
+    position: absolute; top: 20px; right: 20px;
+    background: var(--accent-color); color: var(--white);
+    padding: 5px 15px; font-weight: bold; border-radius: 20px;
+}
+.pkg-details { padding: 30px; }
+.pkg-price { font-size: 1.8rem; color: var(--primary-color); font-weight: 800; display: block; margin: 15px 0; }
+.pkg-features ul li { color: var(--text-light); margin-bottom: 8px; font-size: 0.9rem; }
+.pkg-features ul li i { color: var(--accent-color); margin-right: 10px; }
+
+/* =========================================
+   5. MEGA FOOTER (The 700+ line request)
+   ========================================= */
+footer {
+    background-color: var(--dark-footer);
+    color: #a0a0a0;
+    padding: 80px 0 0 0;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-container {
+    max-width: 1400px; margin: 0 auto; padding: 0 4%;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px; padding-bottom: 60px;
+}
+
+.footer-col h3 { color: var(--white); font-size: 1.2rem; margin-bottom: 25px; position: relative; padding-bottom: 10px; }
+.footer-col h3::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background: var(--accent-color); }
+
+.footer-logo { font-size: 2rem; color: var(--white); font-weight: bold; margin-bottom: 20px; display: block; }
+.footer-logo span { color: var(--accent-color); }
+
+.footer-desc { margin-bottom: 25px; line-height: 1.8; }
+
+.footer-links li { margin-bottom: 12px; }
+.footer-links a { transition: 0.3s; display: flex; align-items: center; }
+.footer-links a:hover { color: var(--accent-color); padding-left: 8px; }
+.footer-links a i { margin-right: 10px; font-size: 0.8rem; }
+
+.contact-row { display: flex; gap: 15px; margin-bottom: 20px; align-items: flex-start; }
+.contact-row i { color: var(--accent-color); font-size: 1.2rem; margin-top: 5px; }
+
+.social-icons { display: flex; gap: 15px; margin-top: 20px; }
+.social-icons a {
+    width: 40px; height: 40px; background: rgba(255,255,255,0.05);
+    display: flex; justify-content: center; align-items: center;
+    border-radius: 50%; color: var(--white); transition: 0.3s;
+}
+.social-icons a:hover { background: var(--accent-color); transform: rotate(360deg); }
+
+.shop-now-box {
+    background: linear-gradient(135deg, var(--accent-color), #8a6e23);
+    padding: 20px; border-radius: 10px; color: var(--white); text-align: center;
+}
+.shop-now-box h4 { color: white; margin-bottom: 10px; }
+.shop-now-btn {
+    background: var(--white); color: var(--primary-color);
+    padding: 8px 20px; border-radius: 20px; font-weight: bold;
+    display: inline-block; margin-top: 10px;
+}
+
+.copyright {
+    background: #060b11; text-align: center; padding: 25px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* =========================================
+   6. RESPONSIVE (Mobile 722px Fix)
+   ========================================= */
+@media screen and (max-width: 722px) {
+    header { padding: 0 20px; height: 70px; }
+    .nav-links { display: none; } /* JS Toggle needed */
+    .menu-toggle { display: block; font-size: 1.5rem; color: var(--primary-color); cursor: pointer; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero { align-items: center; text-align: center; }
+    .hero p { text-align: center; }
+    .btn-group { flex-direction: column; width: 100%; }
+    .btn-main, .btn-glass { width: 100%; text-align: center; }
+    .footer-container { grid-template-columns: 1fr; gap: 30px; }
+}
+
+/* --- THE GOLDEN TICKET DESIGN --- */
+.ticket-wrapper {
+    display: none; /* Hidden by default, shown via JS on success */
+    background: transparent;
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    font-family: 'Uni Sans', sans-serif;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+}
+
+.boarding-pass {
+    display: flex;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Left Side (Main) */
+.pass-main {
+    flex: 2;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0a1525 100%);
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    border-right: 2px dashed rgba(197, 160, 89, 0.5); /* The Tear Line */
+}
+
+/* Right Side (Stub) */
+.pass-stub {
+    flex: 1;
+    background: #f4f4f4;
+    color: var(--primary-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+/* Header Section */
+.pass-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+}
+
+.airline-name { font-size: 1.2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+.airline-name span { color: var(--accent-color); }
+.flight-class { background: var(--accent-color); color: var(--primary-color); padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
+
+/* Route (RUH -> LHR) */
+.pass-route {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 25px;
+}
+.airport-code { font-size: 3rem; font-weight: 900; color: var(--accent-color); line-height: 1; }
+.airport-city { font-size: 0.9rem; opacity: 0.8; text-transform: uppercase; }
+.plane-icon { font-size: 1.5rem; color: #fff; transform: rotate(45deg); }
+
+/* Details Grid */
+.pass-details {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;
+}
+.detail-item label { display: block; font-size: 0.7rem; text-transform: uppercase; opacity: 0.6; margin-bottom: 3px; }
+.detail-item span { font-size: 1rem; font-weight: bold; letter-spacing: 1px; }
+
+/* Barcode */
+.barcode {
+    height: 40px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Code_128_barcode_graphic_1_2.svg/1280px-Code_128_barcode_graphic_1_2.svg.png');
+    background-size: cover;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+/* Stub Details */
+.stub-header { text-align: center; margin-bottom: 20px; }
+.stub-route { display: flex; justify-content: space-between; font-weight: bold; font-size: 1.2rem; margin-bottom: 10px; }
+.stub-item { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 8px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+
+/* Mobile Responsive */
+@media screen and (max-width: 600px) {
+    .boarding-pass { flex-direction: column; }
+    .pass-main { border-right: none; border-bottom: 2px dashed var(--accent-color); }
+    .barcode { display: none; }
+}

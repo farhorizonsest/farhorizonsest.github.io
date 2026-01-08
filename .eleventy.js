@@ -1,16 +1,17 @@
 module.exports = function(eleventyConfig) {
-    // 1. Passthrough Copy: Take "src/assets" and output it to "_site/assets"
-    eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+    // FORCE 11ty to copy the assets folder into the docs folder
+    eleventyConfig.addPassthroughCopy("src/assets");
     
-    // 2. Watch Targets: Tell 11ty to rebuild if you change CSS/JS inside src
+    // Watch targets for development
     eleventyConfig.addWatchTarget("./src/assets/css/");
     eleventyConfig.addWatchTarget("./src/assets/js/");
+    eleventyConfig.addWatchTarget("./src/assets/json/");
 
     return {
         dir: {
-            input: "src",      // Your html files are here
-            output: "docs",   // Build destination
-            includes: "_includes" // Layouts
+            input: "src",
+            output: "docs",
+            includes: "_includes"
         },
         templateFormats: ["html", "njk", "md"],
         htmlTemplateEngine: "njk",

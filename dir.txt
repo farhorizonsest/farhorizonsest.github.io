@@ -9,11 +9,13 @@ C:\Other_Websites\Far Horizons>dir /s
 
  Directory of C:\Other_Websites\Far Horizons
 
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM               652 .eleventy.js
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  12:07 AM               726 .eleventy.js
+01/09/2026  12:05 AM               182 .gitignore
 01/07/2026  08:05 AM             2,383 credentials.json
-01/08/2026  11:05 PM           183,702 dir.txt
+01/08/2026  11:29 PM           190,403 dir.txt
+01/09/2026  01:41 AM    <DIR>          docs
 01/07/2026  08:32 AM    <DIR>          Far_Horizons_Software
 01/07/2026  05:51 AM    <DIR>          images
 01/08/2026  10:54 PM    <DIR>          node_modules
@@ -21,8 +23,1245 @@ C:\Other_Websites\Far Horizons>dir /s
 01/08/2026  10:54 PM               285 package.json
 01/08/2026  11:21 PM    <DIR>          src
 01/07/2026  03:34 AM    <DIR>          videos
-01/08/2026  11:23 PM    <DIR>          _site
-               5 File(s)        246,685 bytes
+               6 File(s)        253,642 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git
+
+01/09/2026  02:23 AM                34 COMMIT_EDITMSG
+01/09/2026  01:42 AM               371 config
+01/09/2026  12:31 AM                73 description
+01/09/2026  02:23 AM               118 FETCH_HEAD
+01/09/2026  12:32 AM                21 HEAD
+01/09/2026  12:31 AM    <DIR>          hooks
+01/09/2026  02:23 AM            19,995 index
+01/09/2026  12:31 AM    <DIR>          info
+01/09/2026  12:32 AM    <DIR>          logs
+01/09/2026  02:23 AM    <DIR>          objects
+01/09/2026  12:57 AM    <DIR>          refs
+               6 File(s)         20,612 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\hooks
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  12:31 AM               478 applypatch-msg.sample
+01/09/2026  12:31 AM               896 commit-msg.sample
+01/09/2026  12:31 AM             4,726 fsmonitor-watchman.sample
+01/09/2026  12:31 AM               189 post-update.sample
+01/09/2026  12:31 AM               424 pre-applypatch.sample
+01/09/2026  12:31 AM             1,649 pre-commit.sample
+01/09/2026  12:31 AM               416 pre-merge-commit.sample
+01/09/2026  12:31 AM             1,374 pre-push.sample
+01/09/2026  12:31 AM             4,898 pre-rebase.sample
+01/09/2026  12:31 AM               544 pre-receive.sample
+01/09/2026  12:31 AM             1,492 prepare-commit-msg.sample
+01/09/2026  12:31 AM             2,783 push-to-checkout.sample
+01/09/2026  12:31 AM             2,308 sendemail-validate.sample
+01/09/2026  12:31 AM             3,650 update.sample
+              14 File(s)         25,827 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\info
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  12:31 AM               240 exclude
+               1 File(s)            240 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\logs
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  02:23 AM             1,112 HEAD
+01/09/2026  12:32 AM    <DIR>          refs
+               1 File(s)          1,112 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\logs\refs
+
+01/09/2026  12:57 AM    <DIR>          .
+01/09/2026  12:57 AM    <DIR>          ..
+01/09/2026  12:32 AM    <DIR>          heads
+01/09/2026  12:57 AM    <DIR>          remotes
+               0 File(s)              0 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\logs\refs\heads
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  02:23 AM               922 main
+               1 File(s)            922 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\logs\refs\remotes
+
+01/09/2026  12:57 AM    <DIR>          .
+01/09/2026  12:57 AM    <DIR>          ..
+01/09/2026  12:57 AM    <DIR>          origin
+               0 File(s)              0 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\logs\refs\remotes\origin
+
+01/09/2026  12:57 AM    <DIR>          .
+01/09/2026  12:57 AM    <DIR>          ..
+01/09/2026  02:23 AM             1,296 HEAD
+01/09/2026  02:23 AM             1,010 main
+               2 File(s)          2,306 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects
+
+01/09/2026  02:23 AM    <DIR>          .
+01/09/2026  02:23 AM    <DIR>          ..
+01/09/2026  12:31 AM    <DIR>          00
+01/09/2026  02:04 AM    <DIR>          04
+01/09/2026  12:31 AM    <DIR>          0e
+01/09/2026  02:23 AM    <DIR>          0f
+01/09/2026  12:32 AM    <DIR>          12
+01/09/2026  12:32 AM    <DIR>          15
+01/09/2026  12:32 AM    <DIR>          16
+01/09/2026  02:04 AM    <DIR>          19
+01/09/2026  12:31 AM    <DIR>          1a
+01/09/2026  12:31 AM    <DIR>          1d
+01/09/2026  12:31 AM    <DIR>          22
+01/09/2026  12:31 AM    <DIR>          23
+01/09/2026  12:31 AM    <DIR>          25
+01/09/2026  12:32 AM    <DIR>          28
+01/09/2026  12:31 AM    <DIR>          2a
+01/09/2026  12:32 AM    <DIR>          2b
+01/09/2026  12:31 AM    <DIR>          2c
+01/09/2026  12:32 AM    <DIR>          2e
+01/09/2026  12:31 AM    <DIR>          2f
+01/09/2026  12:31 AM    <DIR>          31
+01/09/2026  12:32 AM    <DIR>          32
+01/09/2026  12:31 AM    <DIR>          33
+01/09/2026  12:31 AM    <DIR>          34
+01/09/2026  12:31 AM    <DIR>          37
+01/09/2026  12:31 AM    <DIR>          3a
+01/09/2026  12:31 AM    <DIR>          3e
+01/09/2026  12:31 AM    <DIR>          3f
+01/09/2026  12:31 AM    <DIR>          40
+01/09/2026  12:32 AM    <DIR>          42
+01/09/2026  12:31 AM    <DIR>          43
+01/09/2026  12:31 AM    <DIR>          46
+01/09/2026  12:31 AM    <DIR>          47
+01/09/2026  02:23 AM    <DIR>          4d
+01/09/2026  12:31 AM    <DIR>          51
+01/09/2026  12:32 AM    <DIR>          54
+01/09/2026  12:31 AM    <DIR>          56
+01/09/2026  12:31 AM    <DIR>          5a
+01/09/2026  02:05 AM    <DIR>          5e
+01/09/2026  12:32 AM    <DIR>          65
+01/09/2026  12:31 AM    <DIR>          66
+01/09/2026  02:23 AM    <DIR>          68
+01/09/2026  12:31 AM    <DIR>          6a
+01/09/2026  12:32 AM    <DIR>          6e
+01/09/2026  12:31 AM    <DIR>          71
+01/09/2026  12:31 AM    <DIR>          77
+01/09/2026  12:31 AM    <DIR>          7a
+01/09/2026  12:31 AM    <DIR>          7b
+01/09/2026  12:31 AM    <DIR>          81
+01/09/2026  12:31 AM    <DIR>          82
+01/09/2026  12:31 AM    <DIR>          88
+01/09/2026  12:31 AM    <DIR>          8d
+01/09/2026  02:04 AM    <DIR>          8f
+01/09/2026  12:32 AM    <DIR>          93
+01/09/2026  02:04 AM    <DIR>          96
+01/09/2026  12:32 AM    <DIR>          97
+01/09/2026  12:31 AM    <DIR>          9b
+01/09/2026  02:04 AM    <DIR>          9f
+01/09/2026  02:23 AM    <DIR>          a0
+01/09/2026  12:31 AM    <DIR>          a4
+01/09/2026  12:31 AM    <DIR>          ab
+01/09/2026  12:31 AM    <DIR>          ac
+01/09/2026  12:31 AM    <DIR>          ad
+01/09/2026  12:32 AM    <DIR>          b0
+01/09/2026  12:31 AM    <DIR>          b2
+01/09/2026  12:31 AM    <DIR>          b5
+01/09/2026  12:32 AM    <DIR>          b7
+01/09/2026  12:31 AM    <DIR>          b8
+01/09/2026  12:31 AM    <DIR>          b9
+01/09/2026  02:23 AM    <DIR>          ba
+01/09/2026  12:31 AM    <DIR>          bc
+01/09/2026  12:31 AM    <DIR>          be
+01/09/2026  12:31 AM    <DIR>          c0
+01/09/2026  12:31 AM    <DIR>          c1
+01/09/2026  12:32 AM    <DIR>          c5
+01/09/2026  12:31 AM    <DIR>          c6
+01/09/2026  02:04 AM    <DIR>          c8
+01/09/2026  12:31 AM    <DIR>          cb
+01/09/2026  12:32 AM    <DIR>          cc
+01/09/2026  12:32 AM    <DIR>          cd
+01/09/2026  12:32 AM    <DIR>          d2
+01/09/2026  01:32 AM    <DIR>          d3
+01/09/2026  12:32 AM    <DIR>          d5
+01/09/2026  12:31 AM    <DIR>          d6
+01/09/2026  12:31 AM    <DIR>          d7
+01/09/2026  02:23 AM    <DIR>          da
+01/09/2026  12:32 AM    <DIR>          de
+01/09/2026  12:31 AM    <DIR>          df
+01/09/2026  12:32 AM    <DIR>          e0
+01/09/2026  12:32 AM    <DIR>          e1
+01/09/2026  12:32 AM    <DIR>          e3
+01/09/2026  12:32 AM    <DIR>          e4
+01/09/2026  12:31 AM    <DIR>          e6
+01/09/2026  12:31 AM    <DIR>          e9
+01/09/2026  12:31 AM    <DIR>          ed
+01/09/2026  12:31 AM    <DIR>          ee
+01/09/2026  12:31 AM    <DIR>          f1
+01/09/2026  01:32 AM    <DIR>          f5
+01/09/2026  02:04 AM    <DIR>          f7
+01/09/2026  12:31 AM    <DIR>          fb
+01/09/2026  12:31 AM    <DIR>          fe
+01/09/2026  12:32 AM    <DIR>          ff
+01/09/2026  12:31 AM    <DIR>          info
+01/09/2026  12:31 AM    <DIR>          pack
+               0 File(s)              0 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\00
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM           313,243 296e9598fadee8e22cfd89826d3d10f2c0ba26
+               1 File(s)        313,243 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\04
+
+01/09/2026  02:04 AM    <DIR>          .
+01/09/2026  02:04 AM    <DIR>          ..
+01/09/2026  02:04 AM                79 aad6380b7c5ca968fc7bc5761e1ad5858edfd4
+               1 File(s)             79 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\0e
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            29,734 a8cab5bc1699b4380da61d92a452e6744f3105
+               1 File(s)         29,734 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\0f
+
+01/09/2026  02:23 AM    <DIR>          .
+01/09/2026  02:23 AM    <DIR>          ..
+01/09/2026  01:54 AM             5,602 101dd9aba5012599657bc3d8554940532e1ff4
+01/09/2026  02:23 AM               309 7c5b692790c56c4a6dd8d6d9e46834834a1ebd
+               2 File(s)          5,911 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\12
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  02:05 AM                79 0d2834694303c4d64a2b75477947dd88027468
+               1 File(s)             79 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\15
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  02:05 AM               309 a164e222b0781bdbcd54ef42dac4a6c1b21358
+               1 File(s)            309 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\16
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:55 AM                55 bc8507236def191d26400e6d6f00a56114b6e5
+               1 File(s)             55 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\19
+
+01/09/2026  02:04 AM    <DIR>          .
+01/09/2026  02:04 AM    <DIR>          ..
+01/09/2026  01:54 AM             6,924 143bbb239301eb1bc56a0942c211991b411c67
+01/09/2026  12:31 AM             1,115 31c81fc482d1b7ceb06087208348a4ac8fe70c
+01/09/2026  02:04 AM               318 e218595faf48e18225a99f51c61b329b625c89
+               3 File(s)          8,357 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\1a
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:54 AM             3,417 d6868f4573742a2c6ad57cfb9f2a5a832f67c7
+               1 File(s)          3,417 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\1d
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM             1,560 3f32f0b7d96bbb5b04bb7fa390ba60c4744968
+               1 File(s)          1,560 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\22
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            78,189 17164f0c05a385d7d0d83e030fdbae01e99304
+               1 File(s)         78,189 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\23
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            23,191 a573d4d5bb52fe2702b2d503f54a5bc99679f3
+01/09/2026  01:41 AM           101,684 ee663443a7c6d2393dbcb713b07c566f40c925
+               2 File(s)        124,875 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\25
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM           112,246 abf389e22db851b03dd14d87ca10acb8b6b44b
+               1 File(s)        112,246 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\28
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  12:32 AM             1,607 7c3722c02ab4963d8b4c227dd52cbe876fd8b7
+               1 File(s)          1,607 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\2a
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            23,711 0b4101c067f28b4ee64cacf8a83ed52e3698a1
+               1 File(s)         23,711 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\2b
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:54 AM             7,994 226d2c83c75ff539033d219c0a76ecee7b93f7
+01/09/2026  12:32 AM               207 86b477c2ca6ca357e78c2ce0c47f6b0799384c
+               2 File(s)          8,201 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\2c
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:54 AM             7,992 9220864eaa980aa3f34351a698710d90d32496
+               1 File(s)          7,992 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\2e
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:55 AM               130 9655196432652629cd8f133231d260ec2c5feb
+01/09/2026  01:55 AM                55 e770b3a08d6156d16471fe691d4404b33475c1
+               2 File(s)            185 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\2f
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            30,706 5e70f0b31bff74da0a0feed7005be9fa73daba
+               1 File(s)         30,706 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\31
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  12:31 AM               153 ba3a1c52e2f621ce27657c2b56b6347a4679d4
+               1 File(s)            153 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\32
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  12:32 AM                56 7662d54d5e1f5f9f008c0ced94422b1bc25b19
+               1 File(s)             56 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\33
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            90,021 75bef0911555af28fea3c02c3e7671c50a5e7b
+               1 File(s)         90,021 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\34
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            29,195 0ff7c672113399866ff15c7655d9c0df1751ab
+               1 File(s)         29,195 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\37
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            32,300 6fdc64ec0d69dbf0be401aef79ec807d6ad4aa
+01/09/2026  02:05 AM             2,068 91cf529a6a0331b1d9a6d785f4a2813cc4249c
+               2 File(s)         34,368 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\3a
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            30,542 a734914aff84e0ec5d6bc9cd30e7b422fbbbfa
+               1 File(s)         30,542 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\3e
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            66,632 82af272b43d29979203ab7ad946fcc80307286
+               1 File(s)         66,632 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\3f
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            25,141 474939d5180a0aebdd47c9fce4c03a7af0f1c7
+               1 File(s)         25,141 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\40
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            76,778 2f81c0bc082532fca61319959cb4b8e597de9d
+01/09/2026  01:41 AM            24,987 e6d425577d2c9b7e76537ae6f23d226d200df3
+               2 File(s)        101,765 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\42
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:54 AM             7,993 69c1212beafcc14fec9387b4f9687720e8c2ca
+01/09/2026  01:41 AM               208 c2f12e87b19887f5f187e22f974f11ae94fce8
+01/09/2026  01:55 AM                55 f7336628781b0fa904be57eddde618a8ebb691
+               3 File(s)          8,256 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\43
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:54 AM             7,994 75db331ee3dc5894e720af7e4682702bde7c01
+               1 File(s)          7,994 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\46
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            45,806 3af27c02dd3cf5f729e35f23050d4567855824
+               1 File(s)         45,806 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\47
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:54 AM             2,361 9e984331c66cf703e05613fc67eb6ecd523153
+               1 File(s)          2,361 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\4d
+
+01/09/2026  02:23 AM    <DIR>          .
+01/09/2026  02:23 AM    <DIR>          ..
+01/09/2026  12:32 AM               104 66aa96e9e7c004527de44c202d7fce60351e62
+01/09/2026  02:23 AM             3,410 8ae86f47266f7c145cfbf9049d59e2d4c3ec03
+               2 File(s)          3,514 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\51
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            23,835 d95f5d4c4383bd5cc2982f53fb858e1cff8e3d
+               1 File(s)         23,835 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\54
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:55 AM             1,823 53c9126e984adc6c27ea07c02d3d6538b1cfa6
+               1 File(s)          1,823 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\56
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            13,246 328948b3b1bacb23a13af9d727fd75c0343448
+               1 File(s)         13,246 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\5a
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  12:31 AM            17,154 c41c112fd59d9b765e55bc0e6288d68b2497d9
+               1 File(s)         17,154 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\5e
+
+01/09/2026  02:05 AM    <DIR>          .
+01/09/2026  02:05 AM    <DIR>          ..
+01/09/2026  02:05 AM               175 92ec1f2015037d6ac4e7fab4536b76e0149dcd
+               1 File(s)            175 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\65
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  02:05 AM               318 436fd6a11ad1b1d6ae1f35175cd41087da89e9
+01/09/2026  12:32 AM                53 e7b601be23a5430b00b559885d5b00374d3d5c
+               2 File(s)            371 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\66
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  12:31 AM            25,551 fd02ab147ea20ab6532e046bae824a70bcd97c
+               1 File(s)         25,551 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\68
+
+01/09/2026  02:23 AM    <DIR>          .
+01/09/2026  02:23 AM    <DIR>          ..
+01/09/2026  01:41 AM            60,135 7d9f24723a579b2d8e2ac6bd204bea7801d339
+01/09/2026  02:23 AM                52 c176db5688a05e093b014175632561ac91dc0b
+               2 File(s)         60,187 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\6a
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:54 AM             7,989 4295f9422ae01cdf0dc6efa6532fdcb396508d
+               1 File(s)          7,989 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\6e
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:55 AM                55 32357c232ee962023711beb7faf31839bd5004
+               1 File(s)             55 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\71
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            17,484 57aafbacdb095b479ae52f59e28e19ce61d79a
+               1 File(s)         17,484 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\77
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            22,747 fdef90dede46846af9a134d8d70c41f49a8e9a
+               1 File(s)         22,747 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\7a
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            22,875 4bd614c62257099d8a85691021d302d5f67c3a
+               1 File(s)         22,875 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\7b
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  12:31 AM             1,473 1c66dee425011dd7ab387f9d4685286c9555d0
+               1 File(s)          1,473 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\81
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:54 AM             2,137 dd39797b3b733efca17e6b13a1a0b4eaeb6dbd
+01/09/2026  01:41 AM               361 e64f6b8bfeac345f66c41d81753e05b0948c72
+               2 File(s)          2,498 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\82
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  12:31 AM             1,680 672da63748b4811bcbf6e012337f8f3b14befc
+01/09/2026  01:54 AM             2,331 7b5e18dd6526e704b033a4243587a9757de43f
+               2 File(s)          4,011 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\88
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  02:05 AM             1,745 02a85bfc7bc932d7c34b40b94f2a98d4fbbcbd
+               1 File(s)          1,745 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\8d
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            94,249 75deddae520da95d3cf111f4ccbf3361074292
+               1 File(s)         94,249 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\8f
+
+01/09/2026  02:04 AM    <DIR>          .
+01/09/2026  02:04 AM    <DIR>          ..
+01/09/2026  02:04 AM             2,071 55988b36387de76e560587cc0bfc4fe02b7b23
+               1 File(s)          2,071 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\93
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:55 AM                54 0f2b7e5e6e54f88596a64e1937cd1a0089175b
+               1 File(s)             54 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\96
+
+01/09/2026  02:04 AM    <DIR>          .
+01/09/2026  02:04 AM    <DIR>          ..
+01/09/2026  02:04 AM               174 ff47ea53591e5cf09e7ca9503637edb2dec2d8
+               1 File(s)            174 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\97
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:42 AM               174 7573c686610b5bd5174f5618790a874afae816
+               1 File(s)            174 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\9b
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  12:31 AM             1,063 9d1eee1fc553950d8610c9debeb7da6f7ae54a
+               1 File(s)          1,063 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\9f
+
+01/09/2026  02:04 AM    <DIR>          .
+01/09/2026  02:04 AM    <DIR>          ..
+01/09/2026  02:04 AM               130 7b11515b30ed9e11157afdf8c7d47e44d17370
+               1 File(s)            130 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\a0
+
+01/09/2026  02:23 AM    <DIR>          .
+01/09/2026  02:23 AM    <DIR>          ..
+01/09/2026  02:23 AM             1,469 4e33693dc8b96451ba726e68825342dc5d848c
+01/09/2026  01:41 AM            24,251 c9cfcb7800f8535a8579f99fc68a395e96bd77
+               2 File(s)         25,720 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\a4
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            17,568 e598936b3eb6ceb0080dccccdcd49bfe95ca98
+               1 File(s)         17,568 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\ab
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  12:31 AM               877 083a7ea325fadf509c14af7d1012be56b4e9ff
+               1 File(s)            877 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\ac
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            67,577 946e4a76434c72965fd45d6678b2113d31af52
+               1 File(s)         67,577 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\ad
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            16,263 077c6bec782b7c15bfa4ec96ee5900faaa3ccb
+               1 File(s)         16,263 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\b0
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:55 AM                54 7a94e76c66ff5c985d490fc96f98bc1427811d
+               1 File(s)             54 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\b2
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM             4,045 259fc122180aa5f251cb105f171cbd2aec4f9a
+               1 File(s)          4,045 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\b5
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            29,303 5ca6ff968675ac105a815a550bc9c454574ee2
+               1 File(s)         29,303 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\b7
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:41 AM               299 7fc1051a798018eb1e19ea2e04b1ff806a62c9
+01/09/2026  01:41 AM            74,321 a170b0daf3b2eb196e5eed4fd1f8081345a6a2
+01/09/2026  01:55 AM               262 c3534333588f7beff2b0f54ab1f6936aded3f7
+               3 File(s)         74,882 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\b8
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:54 AM             7,987 16b266e63c9a638596e01b744e4d6316337012
+               1 File(s)          7,987 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\b9
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM           304,202 881a43b7313e5a033582e4bf0bcb26bf11730c
+               1 File(s)        304,202 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\ba
+
+01/09/2026  02:23 AM    <DIR>          .
+01/09/2026  02:23 AM    <DIR>          ..
+01/09/2026  02:23 AM               318 6a40b921fc620afe019828c23d8cc58042757a
+               1 File(s)            318 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\bc
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            66,228 b50609467e4fa2fff16f05674f0406331ebc85
+               1 File(s)         66,228 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\be
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            65,982 9903b114146d57bcc35f3e430455bab2dfe07a
+               1 File(s)         65,982 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\c0
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:54 AM             7,993 dbc9930daa659462bf4d7ba18a3ee1b8e6401c
+               1 File(s)          7,993 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\c1
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:54 AM             7,994 4bcfb40c8495f5925ff6f2b53efd6d2939772b
+               1 File(s)          7,994 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\c5
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  12:32 AM               155 783e38193d073efd741df5420dfc9817a83963
+01/09/2026  01:55 AM               274 d3d712e8d6143b1c7a3a1c93ac00b5ea6149f8
+               2 File(s)            429 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\c6
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            66,990 fa97fa9cd04d387bc964110c1fb62b11f5fcca
+               1 File(s)         66,990 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\c8
+
+01/09/2026  02:04 AM    <DIR>          .
+01/09/2026  02:04 AM    <DIR>          ..
+01/09/2026  02:04 AM               308 4da8fd61008f54c4f07c509040803eedd8d578
+               1 File(s)            308 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\cb
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            94,385 a6c6cce88182cb9374acea956769f87a8b8004
+               1 File(s)         94,385 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\cc
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:55 AM                55 b307cd5e7f1926f29c2cb564ce9c59a03839b8
+               1 File(s)             55 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\cd
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:41 AM             2,945 8846222646a7c2e07b56bef39d4b16ceb89fa0
+01/09/2026  01:55 AM               104 fc07419ceff3ec8a6dbe64c4a6b62bb79e0924
+               2 File(s)          3,049 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\d2
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:55 AM                55 8828ef2ec6608ff7e19b18c0e0dc470fe9f652
+               1 File(s)             55 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\d3
+
+01/09/2026  01:32 AM    <DIR>          .
+01/09/2026  01:32 AM    <DIR>          ..
+01/09/2026  01:32 AM               287 28630e315b6177096cbf48aedaf2106920d27f
+01/09/2026  01:55 AM                55 db16bf05973977798324d43a7aa4c2a07131c2
+               2 File(s)            342 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\d5
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  02:05 AM               130 19930cd85ef1ed2127a62ba221eac0f8114168
+01/09/2026  12:31 AM               207 26d0ddcc9907a2633be00e1774c8cd219045e8
+               2 File(s)            337 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\d6
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            72,024 5778d86518d8b7a49afedf3aaa03a682089f98
+               1 File(s)         72,024 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\d7
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            66,135 9a114ef993ade87cef598086cac5c24134c95a
+               1 File(s)         66,135 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\da
+
+01/09/2026  02:23 AM    <DIR>          .
+01/09/2026  02:23 AM    <DIR>          ..
+01/09/2026  12:32 AM                96 666f5fe947480f5f14bf28e1ef3f992249b629
+01/09/2026  02:23 AM               180 94b16a7084e9a876fcfc7fbdaa59fd7d32d98e
+01/09/2026  01:41 AM            19,303 d92e6871033edf9705c0130f3a3a45f7a0d602
+               3 File(s)         19,579 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\de
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:55 AM                55 d5c0facfa51ddffb259c4499c4fed80da1d39e
+               1 File(s)             55 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\df
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  12:31 AM               686 da659eb65310e6e56992293f80358cd7d1ea13
+               1 File(s)            686 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\e0
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:42 AM                53 a2701d01932aedab89bd4a9774dbb0c363b4fc
+               1 File(s)             53 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\e1
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:55 AM                55 abe7f1305532781778ab08ba1486a17b12a54f
+               1 File(s)             55 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\e3
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:55 AM                54 f891d569af62ee3e58e288c68738c9600dcee7
+               1 File(s)             54 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\e4
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:42 AM                52 fec9989cea52432caffee19f3d7d2b3a414152
+               1 File(s)             52 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\e6
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  12:31 AM                15 9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+               1 File(s)             15 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\e9
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM           112,377 9417197e4ba693e102ffc3f46b898266f6e694
+               1 File(s)        112,377 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\ed
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  12:31 AM            17,324 453e39838cb8f40481fe8302c208980b4ed7ff
+               1 File(s)         17,324 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\ee
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  12:31 AM               375 ff9a8b371fca11ad0a22f0f33ccd18eee71e4f
+               1 File(s)            375 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\f1
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            31,265 11e0ad7c029404acdd2603799b1a454a38acc1
+               1 File(s)         31,265 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\f5
+
+01/09/2026  01:32 AM    <DIR>          .
+01/09/2026  01:32 AM    <DIR>          ..
+01/09/2026  01:32 AM               879 722bcb6eb66a8b4b79b46c930c66e393cfc943
+               1 File(s)            879 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\f7
+
+01/09/2026  02:04 AM    <DIR>          .
+01/09/2026  02:04 AM    <DIR>          ..
+01/09/2026  02:04 AM             1,748 112fd974ad17467cb7cc5dbbce28a5e2d15f55
+01/09/2026  01:55 AM                55 cb8c8c1a5928c8ffa554c28b3fbd8e712b911d
+               2 File(s)          1,803 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\fb
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:54 AM             1,972 373276ccb4ab09d4249c3c569cfa7360119419
+01/09/2026  01:41 AM             1,286 66068af324f7d32a6e306a2c000c1ff7134e4b
+               2 File(s)          3,258 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\fe
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+01/09/2026  01:41 AM            57,316 431eb0a35bd83ce017914afd9eb1881e24c137
+01/09/2026  01:41 AM           438,782 82c2b60bf8cb9b531aa03e4724196d12a3f701
+               2 File(s)        496,098 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\ff
+
+01/09/2026  12:32 AM    <DIR>          .
+01/09/2026  12:32 AM    <DIR>          ..
+01/09/2026  01:55 AM                55 1fcf88fa0cae992558e2917dfbb7d6aa34dcd2
+               1 File(s)             55 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\info
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\objects\pack
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\refs
+
+01/09/2026  12:57 AM    <DIR>          .
+01/09/2026  12:57 AM    <DIR>          ..
+01/09/2026  02:23 AM    <DIR>          heads
+01/09/2026  12:57 AM    <DIR>          remotes
+01/09/2026  12:31 AM    <DIR>          tags
+               0 File(s)              0 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\refs\heads
+
+01/09/2026  02:23 AM    <DIR>          .
+01/09/2026  02:23 AM    <DIR>          ..
+01/09/2026  02:23 AM                41 main
+               1 File(s)             41 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\refs\remotes
+
+01/09/2026  12:57 AM    <DIR>          .
+01/09/2026  12:57 AM    <DIR>          ..
+01/09/2026  02:23 AM    <DIR>          origin
+               0 File(s)              0 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\refs\remotes\origin
+
+01/09/2026  02:23 AM    <DIR>          .
+01/09/2026  02:23 AM    <DIR>          ..
+01/09/2026  02:23 AM                30 HEAD
+01/09/2026  02:23 AM                41 main
+               2 File(s)             71 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\.git\refs\tags
+
+01/09/2026  12:31 AM    <DIR>          .
+01/09/2026  12:31 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:41 AM    <DIR>          About_Us
+01/09/2026  01:41 AM    <DIR>          assets
+01/09/2026  01:41 AM    <DIR>          Contact_Us
+01/09/2026  01:54 AM            13,633 index.html
+01/09/2026  01:41 AM    <DIR>          invoice
+01/09/2026  01:41 AM    <DIR>          Packages
+01/09/2026  01:41 AM    <DIR>          Products
+01/09/2026  01:41 AM    <DIR>          Services
+               1 File(s)         13,633 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\About_Us
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM             6,784 index.html
+               1 File(s)          6,784 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM    <DIR>          css
+01/09/2026  01:54 AM    <DIR>          js
+01/09/2026  01:54 AM    <DIR>          json
+01/09/2026  01:41 AM    <DIR>          saas
+01/09/2026  01:54 AM    <DIR>          webfonts
+               0 File(s)              0 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\css
+
+01/09/2026  01:54 AM    <DIR>          .
+01/09/2026  01:54 AM    <DIR>          ..
+01/08/2026  05:10 PM            13,093 main.css
+               1 File(s)         13,093 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\js
+
+01/09/2026  01:54 AM    <DIR>          .
+01/09/2026  01:54 AM    <DIR>          ..
+01/08/2026  11:41 PM             3,819 main.js
+               1 File(s)          3,819 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\json
+
+01/09/2026  01:54 AM    <DIR>          .
+01/09/2026  01:54 AM    <DIR>          ..
+01/09/2026  01:52 AM             5,217 ar.json
+01/09/2026  01:50 AM             4,083 en.json
+               2 File(s)          9,300 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\saas
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\webfonts
+
+01/09/2026  01:54 AM    <DIR>          .
+01/09/2026  01:54 AM    <DIR>          ..
+01/09/2026  01:41 AM    <DIR>          arbfonts-janna-lt-regular-demo
+01/06/2026  08:23 PM            50,891 arbfonts-janna-lt-regular-demo.html
+01/06/2026  08:23 PM            25,152 arbfonts-janna-lt-regular-webfont.woff
+01/06/2026  08:23 PM            19,276 arbfonts-janna-lt-regular-webfont.woff2
+11/11/2025  01:00 AM           139,308 ArbFONTS-Janna-LT-Regular.ttf
+12/27/2025  06:59 PM           134,294 fa-brands-400.eot
+12/27/2025  06:59 PM           751,644 fa-brands-400.svg
+12/27/2025  06:59 PM           133,988 fa-brands-400.ttf
+12/27/2025  06:59 PM            89,988 fa-brands-400.woff
+12/27/2025  06:59 PM            76,736 fa-brands-400.woff2
+12/27/2025  06:59 PM            34,034 fa-regular-400.eot
+12/27/2025  06:59 PM           145,515 fa-regular-400.svg
+12/27/2025  06:59 PM            33,736 fa-regular-400.ttf
+12/27/2025  06:59 PM            16,276 fa-regular-400.woff
+12/27/2025  06:59 PM            13,224 fa-regular-400.woff2
+12/27/2025  06:59 PM           203,030 fa-solid-900.eot
+12/27/2025  06:59 PM           924,025 fa-solid-900.svg
+12/27/2025  06:59 PM           202,744 fa-solid-900.ttf
+12/27/2025  06:59 PM           101,648 fa-solid-900.woff
+12/27/2025  06:59 PM            78,268 fa-solid-900.woff2
+12/27/2025  06:59 PM               612 generator_config.txt
+01/06/2026  08:23 PM               608 generator_config_2.txt
+01/07/2026  04:18 AM            61,392 Janna_LT_Regular.woff
+01/09/2026  01:54 AM    <DIR>          specimen_files
+12/27/2025  06:59 PM             1,766 stylesheet.css
+01/06/2026  08:23 PM               331 stylesheet_2.css
+01/09/2026  01:54 AM    <DIR>          ttf to woff
+12/27/2025  06:59 PM           141,908 Uni Sans Bold.ttf
+12/27/2025  06:59 PM           142,808 Uni Sans Book.ttf
+12/27/2025  06:59 PM           149,584 Uni Sans Heavy.ttf
+12/27/2025  06:59 PM           143,368 Uni Sans Light.ttf
+12/27/2025  06:59 PM           142,180 Uni Sans SemiBold.ttf
+12/27/2025  06:59 PM           144,132 Uni Sans Thin.ttf
+12/27/2025  06:59 PM           144,032 Uni Sans.ttf
+01/09/2026  01:41 AM    <DIR>          uni_sans-demo
+12/27/2025  06:59 PM            51,632 uni_sans-demo.html
+12/27/2025  06:59 PM            30,724 uni_sans-webfont.woff
+12/27/2025  06:59 PM            23,808 uni_sans-webfont.woff2
+01/09/2026  01:41 AM    <DIR>          uni_sans_bold-demo
+12/27/2025  06:59 PM            51,596 uni_sans_bold-demo.html
+12/27/2025  06:59 PM            31,276 uni_sans_bold-webfont.woff
+12/27/2025  06:59 PM            24,224 uni_sans_bold-webfont.woff2
+01/09/2026  01:41 AM    <DIR>          uni_sans_book-demo
+12/27/2025  06:59 PM            51,614 uni_sans_book-demo.html
+12/27/2025  06:59 PM            29,200 uni_sans_book-webfont.woff
+12/27/2025  06:59 PM            22,720 uni_sans_book-webfont.woff2
+01/09/2026  01:41 AM    <DIR>          uni_sans_heavy-demo
+12/27/2025  06:59 PM            51,602 uni_sans_heavy-demo.html
+12/27/2025  06:59 PM            32,412 uni_sans_heavy-webfont.woff
+12/27/2025  06:59 PM            24,960 uni_sans_heavy-webfont.woff2
+01/09/2026  01:41 AM    <DIR>          uni_sans_light-demo
+12/27/2025  06:59 PM            51,620 uni_sans_light-demo.html
+12/27/2025  06:59 PM            29,744 uni_sans_light-webfont.woff
+12/27/2025  06:59 PM            23,164 uni_sans_light-webfont.woff2
+01/09/2026  01:41 AM    <DIR>          uni_sans_semibold-demo
+12/27/2025  06:59 PM            51,620 uni_sans_semibold-demo.html
+12/27/2025  06:59 PM            30,560 uni_sans_semibold-webfont.woff
+12/27/2025  06:59 PM            23,684 uni_sans_semibold-webfont.woff2
+01/09/2026  01:41 AM    <DIR>          uni_sans_thin-demo
+12/27/2025  06:59 PM            51,614 uni_sans_thin-demo.html
+12/27/2025  06:59 PM            29,312 uni_sans_thin-webfont.woff
+12/27/2025  06:59 PM            22,848 uni_sans_thin-webfont.woff2
+              52 File(s)      4,986,432 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\webfonts\arbfonts-janna-lt-regular-demo
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM            50,891 index.html
+               1 File(s)         50,891 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\webfonts\specimen_files
+
+01/09/2026  01:54 AM    <DIR>          .
+01/09/2026  01:54 AM    <DIR>          ..
+12/27/2025  06:59 PM             5,339 grid_12-825-55-15.css
+01/06/2026  08:23 PM             4,970 grid_12-825-55-15_2.css
+12/27/2025  06:59 PM             8,567 specimen_stylesheet.css
+01/06/2026  08:23 PM             8,065 specimen_stylesheet_2.css
+01/07/2026  04:24 AM            57,867 webfontkit-20260106-202350.zip
+               5 File(s)         84,808 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\webfonts\ttf to woff
+
+01/09/2026  01:54 AM    <DIR>          .
+01/09/2026  01:54 AM    <DIR>          ..
+01/09/2026  01:54 AM    <DIR>          webfontkit-20250918-144609
+12/27/2025  06:59 PM           441,170 webfontkit-20250918-144609.zip
+               1 File(s)        441,170 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\webfonts\ttf to woff\webfontkit-20250918-144609
+
+01/09/2026  01:54 AM    <DIR>          .
+01/09/2026  01:54 AM    <DIR>          ..
+01/09/2026  01:41 AM    <DIR>          uni_sans-demo
+12/27/2025  06:59 PM            51,632 uni_sans-demo.html
+12/27/2025  06:59 PM            30,724 uni_sans-webfont.woff
+12/27/2025  06:59 PM            23,808 uni_sans-webfont.woff2
+01/09/2026  01:41 AM    <DIR>          uni_sans_thin-demo
+12/27/2025  06:59 PM            51,614 uni_sans_thin-demo.html
+12/27/2025  06:59 PM            29,312 uni_sans_thin-webfont.woff
+12/27/2025  06:59 PM            22,848 uni_sans_thin-webfont.woff2
+               6 File(s)        209,938 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\webfonts\ttf to woff\webfontkit-20250918-144609\uni_sans-demo
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM            51,632 index.html
+               1 File(s)         51,632 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\webfonts\ttf to woff\webfontkit-20250918-144609\uni_sans_thin-demo
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM            51,614 index.html
+               1 File(s)         51,614 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\webfonts\uni_sans-demo
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM            51,632 index.html
+               1 File(s)         51,632 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\webfonts\uni_sans_bold-demo
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM            51,596 index.html
+               1 File(s)         51,596 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\webfonts\uni_sans_book-demo
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM            51,614 index.html
+               1 File(s)         51,614 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\webfonts\uni_sans_heavy-demo
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM            51,602 index.html
+               1 File(s)         51,602 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\webfonts\uni_sans_light-demo
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM            51,620 index.html
+               1 File(s)         51,620 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\webfonts\uni_sans_semibold-demo
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM            51,620 index.html
+               1 File(s)         51,620 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\assets\webfonts\uni_sans_thin-demo
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM            51,614 index.html
+               1 File(s)         51,614 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\Contact_Us
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM            19,987 index.html
+               1 File(s)         19,987 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\invoice
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM            23,784 index.html
+               1 File(s)         23,784 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\Packages
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM             7,368 index.html
+               1 File(s)          7,368 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\Products
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM             6,949 index.html
+               1 File(s)          6,949 bytes
+
+ Directory of C:\Other_Websites\Far Horizons\docs\Services
+
+01/09/2026  01:41 AM    <DIR>          .
+01/09/2026  01:41 AM    <DIR>          ..
+01/09/2026  01:54 AM             6,577 index.html
+               1 File(s)          6,577 bytes
 
  Directory of C:\Other_Websites\Far Horizons\Far_Horizons_Software
 
@@ -4017,13 +5256,13 @@ C:\Other_Websites\Far Horizons>dir /s
 01/08/2026  11:19 PM             2,684 About_Us.html
 01/07/2026  03:40 AM    <DIR>          assets
 01/08/2026  10:20 PM            19,987 Contact_Us.html
-01/08/2026  09:59 PM            13,640 index.html
+01/09/2026  02:22 AM            13,612 index.html
 01/08/2026  10:49 PM            23,784 invoice.html
 01/08/2026  11:20 PM             3,268 Packages.html
 01/08/2026  11:20 PM             2,849 Products.html
 01/08/2026  11:20 PM             2,477 Services.html
 01/08/2026  11:11 PM    <DIR>          _includes
-               7 File(s)         68,689 bytes
+               7 File(s)         68,661 bytes
 
  Directory of C:\Other_Websites\Far Horizons\src\assets
 
@@ -4047,16 +5286,16 @@ C:\Other_Websites\Far Horizons>dir /s
 
 01/07/2026  04:14 AM    <DIR>          .
 01/07/2026  04:14 AM    <DIR>          ..
-01/07/2026  05:19 AM             3,598 main.js
-               1 File(s)          3,598 bytes
+01/08/2026  11:41 PM             3,819 main.js
+               1 File(s)          3,819 bytes
 
  Directory of C:\Other_Websites\Far Horizons\src\assets\json
 
 01/07/2026  04:15 AM    <DIR>          .
 01/07/2026  04:15 AM    <DIR>          ..
-01/07/2026  07:21 AM             5,213 ar.json
-01/07/2026  07:20 AM             4,079 en.json
-               2 File(s)          9,292 bytes
+01/09/2026  02:05 AM             5,217 ar.json
+01/09/2026  02:05 AM             4,083 en.json
+               2 File(s)          9,300 bytes
 
  Directory of C:\Other_Websites\Far Horizons\src\assets\saas
 
@@ -4159,8 +5398,8 @@ C:\Other_Websites\Far Horizons>dir /s
 
 01/08/2026  11:11 PM    <DIR>          .
 01/08/2026  11:11 PM    <DIR>          ..
-01/08/2026  11:11 PM             4,328 base.njk
-               1 File(s)          4,328 bytes
+01/09/2026  02:19 AM             4,282 base.njk
+               1 File(s)          4,282 bytes
 
  Directory of C:\Other_Websites\Far Horizons\videos
 
@@ -4168,171 +5407,8 @@ C:\Other_Websites\Far Horizons>dir /s
 01/07/2026  03:34 AM    <DIR>          ..
                0 File(s)              0 bytes
 
- Directory of C:\Other_Websites\Far Horizons\_site
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:23 PM    <DIR>          About_Us
-01/08/2026  11:23 PM    <DIR>          assets
-01/08/2026  11:23 PM    <DIR>          Contact_Us
-01/08/2026  11:27 PM            13,640 index.html
-01/08/2026  11:23 PM    <DIR>          invoice
-01/08/2026  11:23 PM    <DIR>          Packages
-01/08/2026  11:23 PM    <DIR>          Products
-01/08/2026  11:23 PM    <DIR>          Services
-               1 File(s)         13,640 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\About_Us
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM             6,800 index.html
-               1 File(s)          6,800 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\assets
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:23 PM    <DIR>          webfonts
-               0 File(s)              0 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\assets\webfonts
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:23 PM    <DIR>          arbfonts-janna-lt-regular-demo
-01/08/2026  11:23 PM    <DIR>          ttf to woff
-01/08/2026  11:23 PM    <DIR>          uni_sans-demo
-01/08/2026  11:23 PM    <DIR>          uni_sans_bold-demo
-01/08/2026  11:23 PM    <DIR>          uni_sans_book-demo
-01/08/2026  11:23 PM    <DIR>          uni_sans_heavy-demo
-01/08/2026  11:23 PM    <DIR>          uni_sans_light-demo
-01/08/2026  11:23 PM    <DIR>          uni_sans_semibold-demo
-01/08/2026  11:23 PM    <DIR>          uni_sans_thin-demo
-               0 File(s)              0 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\assets\webfonts\arbfonts-janna-lt-regular-demo
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM            50,891 index.html
-               1 File(s)         50,891 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\assets\webfonts\ttf to woff
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:23 PM    <DIR>          webfontkit-20250918-144609
-               0 File(s)              0 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\assets\webfonts\ttf to woff\webfontkit-20250918-144609
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:23 PM    <DIR>          uni_sans-demo
-01/08/2026  11:23 PM    <DIR>          uni_sans_thin-demo
-               0 File(s)              0 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\assets\webfonts\ttf to woff\webfontkit-20250918-144609\uni_sans-demo
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM            51,632 index.html
-               1 File(s)         51,632 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\assets\webfonts\ttf to woff\webfontkit-20250918-144609\uni_sans_thin-demo
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM            51,614 index.html
-               1 File(s)         51,614 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\assets\webfonts\uni_sans-demo
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM            51,632 index.html
-               1 File(s)         51,632 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\assets\webfonts\uni_sans_bold-demo
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM            51,596 index.html
-               1 File(s)         51,596 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\assets\webfonts\uni_sans_book-demo
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM            51,614 index.html
-               1 File(s)         51,614 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\assets\webfonts\uni_sans_heavy-demo
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM            51,602 index.html
-               1 File(s)         51,602 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\assets\webfonts\uni_sans_light-demo
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM            51,620 index.html
-               1 File(s)         51,620 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\assets\webfonts\uni_sans_semibold-demo
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM            51,620 index.html
-               1 File(s)         51,620 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\assets\webfonts\uni_sans_thin-demo
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM            51,614 index.html
-               1 File(s)         51,614 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\Contact_Us
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM            19,987 index.html
-               1 File(s)         19,987 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\invoice
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM            23,784 index.html
-               1 File(s)         23,784 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\Packages
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM             7,384 index.html
-               1 File(s)          7,384 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\Products
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM             6,965 index.html
-               1 File(s)          6,965 bytes
-
- Directory of C:\Other_Websites\Far Horizons\_site\Services
-
-01/08/2026  11:23 PM    <DIR>          .
-01/08/2026  11:23 PM    <DIR>          ..
-01/08/2026  11:27 PM             6,593 index.html
-               1 File(s)          6,593 bytes
-
      Total Files Listed:
-            1784 File(s)     23,340,557 bytes
-            1088 Dir(s)  91,078,406,144 bytes free
+            2009 File(s)     32,349,768 bytes
+            1451 Dir(s)  90,688,434,176 bytes free
 
 C:\Other_Websites\Far Horizons>

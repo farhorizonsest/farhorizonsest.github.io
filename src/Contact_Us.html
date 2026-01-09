@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Far Horizons</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+---
+layout: base.njk
+title: Contact Us
+---
     <style>
         /* Specific Styles for the Booking Form */
         .contact-container {
@@ -84,12 +80,12 @@
         </div>
         
         <nav class="nav-links">
-            <a href="index.html" data-i18n="nav.home">Home</a>
-            <a href="Services.html" data-i18n="nav.services">Services</a>
-            <a href="Packages.html" data-i18n="nav.packages">Packages</a>
-            <a href="Products.html" data-i18n="nav.shop">Shop</a>
-            <a href="About_Us.html" data-i18n="nav.about">About</a>
-            <a href="Contact_Us.html" data-i18n="nav.contact">Contact</a>
+            <a href="/" data-i18n="nav.home">Home</a>
+            <a href="/Services/" data-i18n="nav.services">Services</a>
+            <a href="/Packages/" data-i18n="nav.packages">Packages</a>
+            <a href="/Products/" data-i18n="nav.shop">Shop</a>
+            <a href="/About_Us/" data-i18n="nav.about">About</a>
+            <a href="/Contact_Us/" data-i18n="nav.contact">Contact</a>
         </nav>
 
         <div style="display: flex; gap: 15px; align-items: center;">
@@ -317,133 +313,3 @@
             </div>
         </div>
     </div>
-	<footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <a href="#" class="footer-logo"><i class="fas fa-paper-plane"></i> <span class="en-font">Far <span>Horizons</span></span></a>
-                <p class="footer-desc" data-i18n="footer.desc">
-                    Your trusted partner for exploring the world.
-                </p>
-                <div class="shop-now-box">
-                    <h4 data-i18n="footer.shop_title">Travel Essentials Store</h4>
-                    <p style="font-size: 0.8rem; opacity: 0.9;" data-i18n="footer.shop_sub">Bags, Adapters, Pillows & More</p>
-                    <a href="Products.html" class="shop-now-btn" data-i18n="footer.shop_btn">Shop Now</a>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <h3 data-i18n="footer.col_links">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Home</span></a></li>
-                    <li><a href="About_Us.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">About Us</span></a></li>
-                    <li><a href="Products.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.shop">Shop</span></a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3 data-i18n="footer.col_services">Services</h3>
-                <ul class="footer-links">
-                    <li><a href="Services.html"><i class="fas fa-chevron-right"></i> <span data-i18n="services.flight">Flight</span></a></li>
-                    <li><a href="Services.html"><i class="fas fa-chevron-right"></i> <span data-i18n="services.hotel">Hotel</span></a></li>
-                    <li><a href="Services.html"><i class="fas fa-chevron-right"></i> <span data-i18n="services.visa">Visa</span></a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3 data-i18n="footer.col_contact">Contact Us</h3>
-                <div class="contact-row">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <strong class="en-font">Riyadh, Saudi Arabia</strong>
-                    </div>
-                </div>
-                <div class="contact-row">
-                    <i class="fas fa-phone-alt"></i>
-                    <div class="en-font">
-                        +966 50 000 0000
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <h3 data-i18n="footer.col_hours">Opening Hours</h3>
-                <ul style="margin-bottom: 20px;" class="en-font">
-                    <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px;">
-                        <span>Sun - Thu:</span> <span style="color: var(--accent-color);">09:00 - 22:00</span>
-                    </li>
-                    <li style="display: flex; justify-content: space-between;">
-                        <span>Friday:</span> <span style="color: var(--accent-color);">16:00 - 23:00</span>
-                    </li>
-                </ul>
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="copyright">
-            <p>&copy; 2026 <strong>Far Horizons</strong>. <span data-i18n="footer.rights">All Rights Reserved.</span></p>
-            <p style="opacity: 0.3; font-size: 0.75rem; margin-top: 5px;">Developed by MH Studios™ - Plan B Initiative</p>
-        </div>
-    </footer>
-
-    <script src="assets/js/main.js"></script>
-    <script>
-        // Logic to Toggle Return Date based on Trip Type
-        function toggleReturnDate() {
-            const tripType = document.getElementById('tripType').value;
-            const returnGroup = document.getElementById('returnDateGroup');
-            
-            if (tripType === 'One Way') {
-                returnGroup.style.display = 'none';
-            } else {
-                returnGroup.style.display = 'block';
-            }
-        }
-
-        // Logic to Send Data to Google Forms Silently
-        function submitToGoogle(e) {
-		e.preventDefault();
-		const form = document.getElementById('bookingForm');
-		const btn = form.querySelector('button');
-		
-		// 1. Grab User Data
-		const bookingData = {
-			name: form.querySelector('input[name="entry.1145440639"]').value.toUpperCase(),
-			phone: form.querySelector('input[name="entry.650094071"]').value,
-			email: form.querySelector('input[name="entry.757915593"]').value,
-			from: form.querySelector('input[name="entry.244243532"]').value.toUpperCase(),
-			to: form.querySelector('input[name="entry.1505842113"]').value.toUpperCase(),
-			date: form.querySelector('input[name="entry.1224021015"]').value,
-			cabin: form.querySelector('select[name="entry.184227000"]').value.toUpperCase(),
-			ref: "FH-" + Math.floor(1000 + Math.random() * 9000) // Generate random Ref ID
-		};
-
-		// 2. Save to LocalStorage (The "Memory" Trick)
-		localStorage.setItem('fh_latest_booking', JSON.stringify(bookingData));
-
-		// 3. Send to Google (The Silent Backend)
-		const GOOGLE_URL = "https://docs.google.com/forms/d/e/1FAIpQLScs9MFdz8dqJpdthxzrZZUyXDoHAagF9u2WHkGhAI6j3LzvoQ/formResponse";
-		const formData = new FormData(form);
-		
-		btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
-		btn.style.opacity = '0.7';
-
-		fetch(GOOGLE_URL, {
-			method: 'POST',
-			mode: 'no-cors', 
-			body: formData
-		}).then(() => {
-			// 4. Redirect to the Invoice Page
-			window.location.href = 'invoice.html';
-		}).catch(err => {
-			alert("Connection Error. Please check internet.");
-			btn.innerHTML = 'Try Again';
-		});
-	}
-    </script>
-</body>
-</html>

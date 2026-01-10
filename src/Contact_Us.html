@@ -298,46 +298,40 @@ title: Contact Us
             }
         }
 
-        // 2. Submit to Google Forms Logic
+		// 2. Submit to Google Forms Logic
         function submitToGoogle(e) {
-            e.preventDefault(); // STOP THE REFRESH!
+            e.preventDefault(); // Stop page refresh
 
-            // === IMPORTANT: PASTE YOUR GOOGLE FORM ACTION URL HERE ===
-            // It should look like: https://docs.google.com/forms/u/0/d/e/..../formResponse
+            // Your Google Form URL
             const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScs9MFdz8dqJpdthxzrZZUyXDoHAagF9u2WHkGhAI6j3LzvoQ/formResponse"; 
 
             const form = document.getElementById('bookingForm');
             const formData = new FormData(form);
 
-            // OPTIONAL: Update the Ticket Preview with Real Data
-            const name = document.getElementById('inputName').value.toUpperCase();
-            const fromCity = document.getElementById('inputFrom').value.toUpperCase();
-            const toCity = document.getElementById('inputTo').value.toUpperCase();
-            const date = document.getElementById('dateDept').value;
-            const cabin = document.getElementById('classType').value.toUpperCase();
+            // 1. CAPTURE DATA FOR THE INVOICE PAGE
+            // We save this to the browser's memory so invoice.html can display it.
+            const ticketDetails = {
+                name: document.getElementById('inputName').value,
+                from: document.getElementById('inputFrom').value,
+                to: document.getElementById('inputTo').value,
+                date: document.getElementById('dateDept').value,
+                cabin: document.getElementById('classType').value,
+                ref: "FH-" + Math.floor(Math.random() * 10000) // Generate a random Ticket #
+            };
+            localStorage.setItem('fh_latest_booking', JSON.stringify(ticketDetails));
 
-            // Update Ticket Visuals
-            document.getElementById('ticket-name').textContent = name || "PASSENGER";
-            document.getElementById('stub-name').textContent = name.split(' ')[0] || "PSGR";
-            document.getElementById('ticket-from-city').textContent = fromCity.split(' ')[0];
-            document.getElementById('ticket-to-city').textContent = toCity.split(' ')[0];
-            document.getElementById('ticket-date').textContent = date;
-            document.getElementById('stub-date').textContent = date;
-            document.getElementById('ticket-class').textContent = cabin;
-
-            // Send Data to Google
+            // 2. SEND TO GOOGLE & REDIRECT
             fetch(googleFormUrl, {
                 method: 'POST',
-                mode: 'no-cors', // Essential for Google Forms
+                mode: 'no-cors', 
                 body: formData
             }).then(() => {
-                // Success!
-                form.style.display = 'none'; // Hide Form
-                document.getElementById('success-msg').style.display = 'block'; // Show Ticket
-                window.scrollTo(0,0);
+                // SUCCESS: Go to the invoice page!
+                window.location.href = "invoice.html"; 
             }).catch(err => {
                 console.error('Error:', err);
-                alert("There was an error submitting the form, but we have noted your request.");
+                // Even if there is a network glitch, let's take them to the invoice
+                window.location.href = "invoice.html"; 
             });
         }
     </script>

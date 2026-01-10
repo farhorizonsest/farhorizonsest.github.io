@@ -5,15 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Far Horizons</title>
 	
-    
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     
+
+    <style>
+        /* === MOBILE MENU STYLES === */
+        /* Default: Hidden on Desktop */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            z-index: 2000; /* Ensure it floats above everything */
+            margin-left: 20px;
+        }
+
+        /* Mobile Breakpoint: Safe Zone set to 850px to cover your Tecno Spark */
+        @media screen and (max-width: 850px) {
+            
+            /* 1. Show the Menu Button */
+            .menu-toggle {
+                display: block;
+            }
+
+            /* 2. Transform Nav Links into Side Panel */
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%; /* Hidden to the right */
+                width: 280px; /* Panel Width */
+                height: 100vh;
+                background: #ffffff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center; /* Center items vertically */
+                align-items: center;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: 0.4s ease-in-out; /* Smooth Slide Effect */
+                z-index: 1000;
+                padding-top: 60px;
+            }
+
+            /* 3. The Class that slides it in */
+            .nav-links.active {
+                right: 0; 
+            }
+
+            /* Mobile Link Styling */
+            .nav-links a {
+                margin: 20px 0;
+                font-size: 1.2rem;
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body class="en">
 
-    <header>
+    <header style="position: relative; z-index: 1500;">
         <div class="logo">
             <i class="fas fa-paper-plane"></i>
             <div class="en-font">Far <span>Horizons</span></div>
@@ -28,11 +81,12 @@
             <a href="/Contact_Us/" data-i18n="nav.contact">Contact</a>
         </nav>
 
-        <div style="display: flex; gap: 15px; align-items: center;">
+        <div style="display: flex; align-items: center;">
             <button class="lang-btn" onclick="toggleLanguage()">
-                <i class="fas fa-globe"></i> <span id="lang-text" data-i18n="nav.lang_btn">العربية</span>
+                <i class="fas fa-globe"></i> <span id="lang-text">العربية</span>
             </button>
-            <div class="menu-toggle" style="display: none;">
+
+            <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -93,21 +147,15 @@
     <footer>
         <div class="footer-container">
             <div class="footer-col">
-                <a href="#" class="footer-logo"><i class="fas fa-paper-plane"></i> <span class="en-font">Far <span>Horizons</span></span></a>
-                <p class="footer-desc" data-i18n="footer.desc">
-                    Your trusted partner for exploring the world.
-                </p>
-                <div class="shop-now-box">
-                    <h4 data-i18n="footer.shop_title">Travel Essentials Store</h4>
-                    <p style="font-size: 0.8rem; opacity: 0.9;" data-i18n="footer.shop_sub">Bags, Adapters, Pillows & More</p>
-                    <a href="/Products/" class="shop-now-btn" data-i18n="footer.shop_btn">Shop Now</a>
-                </div>
+                <h3>Far Horizons</h3>
+                <p data-i18n="footer.desc">Your gateway to the world's most breathtaking destinations. Experience luxury, adventure, and culture with us.</p>
             </div>
-            
+
             <div class="footer-col">
                 <h3 data-i18n="footer.col_links">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="/index/"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Home</span></a></li>
+                <ul>
+                    <li><a href="/"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Home</span></a></li>
+                    <li><a href="/Packages/"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.packages">Packages</span></a></li>
                     <li><a href="/About_Us/"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">About Us</span></a></li>
                     <li><a href="/Products/"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.shop">Shop</span></a></li>
                 </ul>
@@ -134,5 +182,16 @@
 
     <script src="/assets/js/main.js"></script>
     
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 </html>

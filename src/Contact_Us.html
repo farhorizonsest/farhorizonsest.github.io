@@ -3,7 +3,6 @@ layout: base.njk
 title: Contact Us
 ---
     <style>
-        /* Specific Styles for the Booking Form */
         .contact-container {
             display: flex; flex-wrap: wrap; gap: 40px;
             max-width: 1300px; margin: 50px auto; padding: 0 5%;
@@ -19,7 +18,6 @@ title: Contact Us
             position: relative;
         }
 
-        /* Gold Top Bar */
         .booking-header {
             background: var(--primary-color);
             color: var(--white);
@@ -30,7 +28,6 @@ title: Contact Us
 
         .booking-form { padding: 30px; }
         
-        /* Grid Layout for Form */
         .form-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -56,7 +53,6 @@ title: Contact Us
             box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.1);
         }
 
-        /* Section Dividers */
         .form-section-title {
             grid-column: 1 / -1;
             margin-top: 15px; margin-bottom: 5px;
@@ -64,12 +60,24 @@ title: Contact Us
             font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 5px;
         }
 
-        /* Success Message */
-        #success-msg {
-            display: none; background: #d4edda; color: #155724;
-            padding: 20px; text-align: center; border-radius: 8px; margin-top: 20px;
+        #loading-msg {
+            display: none; 
+            text-align: center; 
+            padding: 40px;
         }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--accent-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='/invoice/';}"></iframe>
 
     <section class="hero" style="height: 40vh; min-height: 300px;">
         <h1 data-i18n="nav.contact">Contact Us</h1>
@@ -91,7 +99,7 @@ title: Contact Us
             <div style="background: #f4f4f4; padding: 20px; border-radius: 10px; margin-top: 30px;">
                 <h4 style="margin-bottom: 10px; color:var(--primary-color);">Note:</h4>
                 <p style="font-size: 0.9rem;">
-                    After submitting this form, our team will verify availability and send you an invoice via WhatsApp or Email. Payment is required to confirm the booking.
+                    After submitting this form, our team will verify availability and send you an invoice via WhatsApp or Email.
                 </p>
             </div>
         </div>
@@ -103,7 +111,18 @@ title: Contact Us
             </div>
             
             <div class="booking-form">
-                <form id="bookingForm" onsubmit="submitToGoogle(event)">
+                
+                <div id="loading-msg">
+                    <div class="spinner"></div>
+                    <h3 style="color:var(--primary-color);">Processing Request...</h3>
+                    <p>Please wait while we secure your booking.</p>
+                </div>
+
+                <form id="bookingForm" 
+                      action="https://docs.google.com/forms/d/e/1FAIpQLScs9MFdz8dqJpdthxzrZZUyXDoHAagF9u2WHkGhAI6j3LzvoQ/formResponse" 
+                      method="POST" 
+                      target="hidden_iframe" 
+                      onsubmit="handleFormSubmit()">
                     
                     <div class="form-grid">
                         <h4 class="form-section-title"><i class="fas fa-route"></i> Itinerary Details</h4>
@@ -203,115 +222,31 @@ title: Contact Us
                     </div>
 
                 </form>
-
-                <div id="success-msg" style="display:none;">
-					<div style="text-align: center; margin-bottom: 20px; color: #155724;">
-						<i class="fas fa-check-circle fa-2x"></i>
-						<h3 style="margin-top:10px;">Request Received! Here is your Ticket Preview:</h3>
-					</div>
-
-					<div class="ticket-wrapper" style="display:block;">
-						<div class="boarding-pass">
-							
-							<div class="pass-main">
-								<div class="pass-header">
-									<div class="airline-name"><i class="fas fa-paper-plane"></i> FAR <span>HORIZONS</span></div>
-									<div class="flight-class" id="ticket-class">ECONOMY</div>
-								</div>
-								
-								<div class="pass-route">
-									<div>
-										<div class="airport-code" id="ticket-from-code">DEP</div>
-										<div class="airport-city" id="ticket-from-city">DEPARTURE</div>
-									</div>
-									<div class="plane-icon"><i class="fas fa-plane"></i></div>
-									<div style="text-align: right;">
-										<div class="airport-code" id="ticket-to-code">ARR</div>
-										<div class="airport-city" id="ticket-to-city">ARRIVAL</div>
-									</div>
-								</div>
-
-								<div class="pass-details">
-									<div class="detail-item">
-										<label>Passenger Name</label>
-										<span id="ticket-name">PASSENGER</span>
-									</div>
-									<div class="detail-item">
-										<label>Date</label>
-										<span id="ticket-date">--/--</span>
-									</div>
-									<div class="detail-item">
-										<label>Flight No</label>
-										<span>FH-2026</span>
-									</div>
-									<div class="detail-item">
-										<label>Gate</label>
-										<span>A04</span>
-									</div>
-								</div>
-								
-								<div class="barcode"></div>
-							</div>
-
-							<div class="pass-stub">
-								<div class="stub-header">
-									<div class="airline-name" style="color:var(--primary-color); font-size:0.9rem;">FAR <span>HORIZONS</span></div>
-								</div>
-								<div class="stub-route">
-									<span id="stub-from">DEP</span>
-									<i class="fas fa-plane" style="font-size:0.8rem; color:#ccc;"></i>
-									<span id="stub-to">ARR</span>
-								</div>
-								<div class="stub-item">
-									<span>Passenger</span>
-									<strong id="stub-name" style="max-width: 80px; overflow: hidden; white-space: nowrap;">PSGR</strong>
-								</div>
-								<div class="stub-item">
-									<span>Date</span>
-									<strong id="stub-date">--</strong>
-								</div>
-								<div class="stub-item">
-									<span>Seat</span>
-									<strong>--</strong>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #666;">
-						*This is a preview confirmation. Your official e-ticket will be sent via WhatsApp/Email after payment.
-					</p>
-				</div>
             </div>
         </div>
     </div>
 
     <script>
-        // 1. Toggle Return Date Logic
+        var submitted = false;
+
         function toggleReturnDate() {
             const tripType = document.getElementById('tripType').value;
             const returnGroup = document.getElementById('returnDateGroup');
             if (tripType === 'One Way') {
                 returnGroup.style.display = 'none';
+                const returnInput = returnGroup.querySelector('input');
+                if(returnInput) returnInput.value = "";
             } else {
                 returnGroup.style.display = 'block';
             }
         }
 
-		// 2. Submit to Google Forms Logic
-        function submitToGoogle(e) {
-            e.preventDefault(); // Stop page refresh
-
-		// 2. Submit to Google Forms Logic
-        function submitToGoogle(e) {
-            e.preventDefault(); // Stop page refresh
-
-            const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScs9MFdz8dqJpdthxzrZZUyXDoHAagF9u2WHkGhAI6j3LzvoQ/formResponse"; 
-
-            const form = document.getElementById('bookingForm');
-            const formData = new FormData(form);
-
-            // 1. CAPTURE DATA FOR THE INVOICE PAGE
+        function handleFormSubmit() {
+            // 1. Show Loading Spinner
+            document.getElementById('bookingForm').style.display = 'none';
+            document.getElementById('loading-msg').style.display = 'block';
+            
+            // 2. Save Data for Invoice
             const ticketDetails = {
                 name: document.getElementById('inputName').value,
                 from: document.getElementById('inputFrom').value,
@@ -321,18 +256,13 @@ title: Contact Us
                 ref: "FH-" + Math.floor(Math.random() * 10000)
             };
             localStorage.setItem('fh_latest_booking', JSON.stringify(ticketDetails));
-
-            // 2. SEND TO GOOGLE & REDIRECT
-            fetch(googleFormUrl, {
-                method: 'POST',
-                mode: 'no-cors', 
-                body: formData
-            }).then(() => {
-                // SUCCESS: Redirect to the correct path!
-                window.location.href = "/invoice/"; 
-            }).catch(err => {
-                console.error('Error:', err);
-                window.location.href = "/invoice/"; 
-            });
+            
+            // 3. Set Flag (iframe will see this and redirect)
+            submitted = true;
+            
+            // 4. Backup Redirect
+            setTimeout(function() {
+                window.location = "/invoice/";
+            }, 2500);
         }
     </script>

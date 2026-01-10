@@ -25,45 +25,56 @@
         "values_title": "Our Values",
         "values_desc": "Integrity, Customer Obsession, Innovation, and Excellence."
     },
-    "services": {
-        "header": "Our Premium Services",
-        "sub": "Everything you need for a perfect trip, under one roof.",
-        "flight": "Flight Booking",
-        "flight_desc": "Domestic & International flights at best rates.",
-        "hotel": "Hotel Reservations",
-        "hotel_desc": "From budget stays to 5-star luxury resorts.",
-        "visa": "Visa Assistance",
-        "visa_desc": "Professional guidance for Schengen, US, UK.",
-        "transport": "Transport",
-        "transport_desc": "Airport pickups and VIP car rentals."
+    "about_page": {
+        "hero_title": "Our Story",
+        "hero_sub": "Bridging cultures, one flight at a time.",
+        "who_title": "Who We Are",
+        "who_text": "Founded with a vision to revolutionize the travel industry in Saudi Arabia, Far Horizons has established itself as a beacon of reliability and luxury. We are not just a travel agency; we are architects of memories.",
+        "stats_tickets": "Tickets Issued",
+        "stats_clients": "Happy Clients",
+        "stats_dest": "Destinations",
+        "stats_support": "Support",
+        "team_title": "Our Team",
+        "team_sub": "Meet the experts behind your seamless journeys."
     },
-    "why_us": {
-        "header": "Why Choose Far Horizons?",
-        "title": "A Legacy of Trust",
-        "p1": "Established to serve the growing needs of travelers in Saudi Arabia, Far Horizons has quickly grown from a local ticketing office to a full-service travel management company.",
-        "p2": "We understand that travel is not just about moving from point A to point B; it's about the experience.",
-        "list_1": "Certified IATA Members",
-        "list_2": "24/7 Customer Support",
-        "list_3": "Exclusive Corporate Deals"
+    "services_page": {
+        "hero_title": "World Class Services",
+        "hero_sub": "Comprehensive travel solutions designed for your comfort.",
+        "flight_title": "Flight Reservations",
+        "flight_desc": "We provide instant booking for domestic and international flights on over 500 airlines. Economy, Business, or First Class.",
+        "hotel_title": "Luxury Accommodation",
+        "hotel_desc": "From boutique hotels in Paris to beach resorts in the Maldives. VIP treatment and exclusive rates guaranteed.",
+        "visa_title": "Visa Assistance",
+        "visa_desc": "Don't let paperwork ruin your trip. Our experts handle Schengen, UK, US, and Asian visas with high approval rates.",
+        "cta_title": "Ready to Fly?",
+        "cta_desc": "Contact us today to start planning your next adventure."
     },
-    "packages": {
-        "header": "Trending Packages",
-        "sub": "Handpicked destinations for this season.",
-        "pkg1_title": "Maldives Luxury Escape",
-        "pkg1_feat": "5 Days / 4 Nights",
-        "pkg2_title": "Istanbul Cultural Tour",
-        "pkg2_feat": "6 Days / 5 Nights",
-        "pkg3_title": "Paris & Swiss Alps",
-        "pkg3_feat": "8 Days / 7 Nights",
-        "book_btn": "Book Now"
+    "packages_page": {
+        "hero_title": "Curated Packages",
+        "hero_sub": "Hand-picked destinations for the perfect getaway.",
+        "pkg_maldives": "Maldives Escape",
+        "pkg_maldives_sub": "Includes Flights + Water Villa",
+        "pkg_paris": "Paris & Swiss Alps",
+        "pkg_paris_sub": "8 Days / 7 Nights + Train",
+        "pkg_london": "London Special",
+        "pkg_london_sub": "City Center Hotel + Tours",
+        "pkg_istanbul": "Istanbul & Bursa",
+        "pkg_istanbul_sub": "Guide + Breakfast",
+        "pkg_cairo": "Cairo & Nile",
+        "pkg_cairo_sub": "5 Days Historical Tour",
+        "btn_book": "Book Now"
+    },
+    "shop_page": {
+        "hero_title": "Travel Essentials",
+        "hero_sub": "Gear up for your next adventure.",
+        "prod_headphone": "Noise Cancelling Headphones",
+        "prod_pillow": "Neck Pillow",
+        "prod_adapter": "Universal Adapter",
+        "btn_wa": "Buy via WhatsApp"
     },
     "footer": {
         "desc": "Your trusted partner for exploring the world. We provide end-to-end travel solutions tailored to your needs.",
-        "shop_title": "Travel Essentials Store",
-        "shop_sub": "Bags, Adapters, Pillows & More",
-        "shop_btn": "Shop Now",
         "col_links": "Quick Links",
-        "col_services": "Services",
         "col_contact": "Contact Us",
         "col_hours": "Opening Hours",
         "rights": "All Rights Reserved."
@@ -80,15 +91,14 @@
         "date_ret": "Return Date",
         "class": "Cabin Class",
         "passengers": "Passengers",
-        "fullname": "Full Name (As on Passport)",
-        "phone": "Phone Number",
-        "email": "Email Address",
+        "fullname": "Full Name",
+        "phone": "Phone",
+        "email": "Email",
         "nationality": "Nationality",
-        "passport": "Passport Number",
-        "pp_expiry": "Passport Expiry",
+        "passport": "Passport No",
+        "pp_expiry": "Expiry Date",
         "dob": "Date of Birth",
         "notes": "Special Requests",
-        "btn_submit": "Submit Booking Request",
-        "success": "Request Sent Successfully! We will contact you shortly."
+        "btn_submit": "Submit Booking Request"
     }
 }

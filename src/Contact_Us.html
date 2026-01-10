@@ -302,21 +302,23 @@ title: Contact Us
         function submitToGoogle(e) {
             e.preventDefault(); // Stop page refresh
 
-            // Your Google Form URL
+		// 2. Submit to Google Forms Logic
+        function submitToGoogle(e) {
+            e.preventDefault(); // Stop page refresh
+
             const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScs9MFdz8dqJpdthxzrZZUyXDoHAagF9u2WHkGhAI6j3LzvoQ/formResponse"; 
 
             const form = document.getElementById('bookingForm');
             const formData = new FormData(form);
 
             // 1. CAPTURE DATA FOR THE INVOICE PAGE
-            // We save this to the browser's memory so invoice.html can display it.
             const ticketDetails = {
                 name: document.getElementById('inputName').value,
                 from: document.getElementById('inputFrom').value,
                 to: document.getElementById('inputTo').value,
                 date: document.getElementById('dateDept').value,
                 cabin: document.getElementById('classType').value,
-                ref: "FH-" + Math.floor(Math.random() * 10000) // Generate a random Ticket #
+                ref: "FH-" + Math.floor(Math.random() * 10000)
             };
             localStorage.setItem('fh_latest_booking', JSON.stringify(ticketDetails));
 
@@ -326,12 +328,11 @@ title: Contact Us
                 mode: 'no-cors', 
                 body: formData
             }).then(() => {
-                // SUCCESS: Go to the invoice page!
-                window.location.href = "invoice.html"; 
+                // SUCCESS: Redirect to the correct path!
+                window.location.href = "/invoice/"; 
             }).catch(err => {
                 console.error('Error:', err);
-                // Even if there is a network glitch, let's take them to the invoice
-                window.location.href = "invoice.html"; 
+                window.location.href = "/invoice/"; 
             });
         }
     </script>

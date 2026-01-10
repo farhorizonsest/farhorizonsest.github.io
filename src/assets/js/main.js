@@ -110,3 +110,35 @@ function setupMobileMenu() {
         });
     }
 }
+
+// --- MOBILE MENU LOGIC ---
+function setupMobileMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const icon = menuToggle ? menuToggle.querySelector('i') : null;
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            // 1. Toggle the Slide-In Class
+            navLinks.classList.toggle('active');
+
+            // 2. Toggle Icon Animation (Bars <-> X)
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // 3. Close Menu when clicking a link (Better UX)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+    }
+}

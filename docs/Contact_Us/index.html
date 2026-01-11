@@ -258,9 +258,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label data-i18n="form.passengers">Passengers</label>
-                            <input type="text" name="entry.337838499" placeholder="e.g. 2 Adults, 1 Child" required>
-                        </div>
+							<label data-i18n="form.passengers">Number of Passengers</label>
+							<input type="number" id="passengerCount" name="entry.337838499" placeholder="1" min="1" required class="en-font">
+						</div>
 
 
                         <h4 class="form-section-title"><i class="fas fa-user"></i> Passenger Details</h4>
@@ -320,6 +320,23 @@
     <script>
         var submitted = false;
 
+        // --- A. ON PAGE LOAD: PRE-FILL PASSENGERS ---
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("✅ Form System Ready");
+
+            // Check if user came from Homepage with a package selected
+            const savedPackage = JSON.parse(localStorage.getItem('fh_selected_package'));
+            
+            // If yes, auto-fill the passenger count
+            if (savedPackage && savedPackage.passengers) {
+                const passInput = document.getElementById('passengerCount');
+                if(passInput) {
+                    passInput.value = savedPackage.passengers;
+                }
+            }
+        });
+
+        // --- B. TOGGLE RETURN DATE ---
         function toggleReturnDate() {
             const tripType = document.getElementById('tripType').value;
             const returnGroup = document.getElementById('returnDateGroup');
@@ -332,28 +349,54 @@
             }
         }
 
+        // --- C. HANDLE SUBMIT (CALCULATE PRICE & REDIRECT) ---
         function handleFormSubmit() {
-            // 1. Show Loading Spinner
+            // 1. Show Loading UI
             document.getElementById('bookingForm').style.display = 'none';
             document.getElementById('loading-msg').style.display = 'block';
+
+            // 2. Get the Package Info (from memory)
+            const savedPackage = JSON.parse(localStorage.getItem('fh_selected_package')) || null;
             
-            // 2. Save Data for Invoice
+            // 3. Determine Price (Using pricing.js logic)
+            let pricePerPerson = 0;
+
+            if (savedPackage) {
+                // Option A: Use the package price from the Database
+                // (We use 'getPriceFor' to ensure we have the latest price)
+                pricePerPerson = getPriceFor('package', savedPackage.name) || savedPackage.price;
+            } else {
+                // Option B: Fallback to Cabin Class from Database
+                const cabin = document.getElementById('classType').value;
+                pricePerPerson = getPriceFor('class', cabin);
+            }
+
+            // 4. Capture Form Data
             const ticketDetails = {
                 name: document.getElementById('inputName').value,
                 from: document.getElementById('inputFrom').value,
                 to: document.getElementById('inputTo').value,
                 date: document.getElementById('dateDept').value,
                 cabin: document.getElementById('classType').value,
+                passengers: document.getElementById('passengerCount').value || 1, // Get the Number!
+                
+                pricePerPerson: pricePerPerson, // Save the Price!
+                
                 ref: "FH-" + Math.floor(Math.random() * 10000)
             };
+            
+            // 5. Save to Browser Memory (For Checkout Page)
             localStorage.setItem('fh_latest_booking', JSON.stringify(ticketDetails));
             
-            // 3. Set Flag (iframe will see this and redirect)
+            // 6. Clear the package selection (Reset for next time)
+            localStorage.removeItem('fh_selected_package');
+
+            // 7. Set Flag (iframe will see this)
             submitted = true;
             
-            // 4. Backup Redirect
+            // 8. Redirect to CHECKOUT (Not Invoice yet!)
             setTimeout(function() {
-                window.location = "/invoice/";
+                window.location = "/Checkout/";
             }, 2500);
         }
     </script>
@@ -395,7 +438,11 @@
         </div>
     </footer>
 
-    <script src="/assets/js/main.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="/assets/js/pricing.js"></script>
+
+    
+    
     
     <script>
         if (window.netlifyIdentity) {

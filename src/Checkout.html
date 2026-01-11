@@ -1,0 +1,208 @@
+---
+layout: base.njk
+title: Secure Checkout
+---
+
+<style>
+    .checkout-container {
+        display: flex; flex-wrap: wrap; gap: 40px;
+        max-width: 1200px; margin: 50px auto; padding: 0 5%;
+    }
+    
+    /* Left Column: Payment Form */
+    .payment-section { flex: 2; min-width: 300px; }
+    
+    /* Right Column: Order Summary */
+    .summary-section { flex: 1; min-width: 300px; }
+
+    .card-box {
+        background: #fff; padding: 30px; border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        margin-bottom: 20px;
+        border: 1px solid #eee;
+    }
+
+    .section-header {
+        border-bottom: 2px solid #f4f4f4; padding-bottom: 15px; margin-bottom: 20px;
+        display: flex; justify-content: space-between; align-items: center;
+    }
+    .section-header h3 { color: var(--primary-color); margin: 0; }
+
+    /* Credit Card Visuals */
+    .cc-icons { font-size: 2rem; color: #666; display: flex; gap: 10px; }
+    .fa-cc-visa { color: #1a1f71; }
+    .fa-cc-mastercard { color: #eb001b; }
+    .fa-cc-amex { color: #2e77bb; }
+
+    /* Form Styling */
+    .form-row { display: flex; gap: 20px; }
+    .form-col { flex: 1; }
+    
+    .input-label { display: block; font-weight: bold; font-size: 0.9rem; margin-bottom: 8px; color: #555; }
+    .input-field {
+        width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
+        font-family: 'Courier New', monospace; letter-spacing: 1px;
+    }
+    .input-field:focus { border-color: var(--accent-color); outline: none; }
+
+    /* Summary Styling */
+    .summary-row { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 0.95rem; }
+    .total-row {
+        display: flex; justify-content: space-between; margin-top: 20px; padding-top: 20px;
+        border-top: 2px dashed #ddd; font-weight: bold; font-size: 1.2rem; color: var(--primary-color);
+    }
+    
+    .flight-preview {
+        background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 20px;
+        border-left: 4px solid var(--accent-color);
+    }
+    .route-display { font-weight: bold; font-size: 1.1rem; margin-bottom: 5px; }
+    .date-display { font-size: 0.9rem; color: #666; }
+
+    /* Button */
+    .btn-pay {
+        width: 100%; padding: 15px; background: var(--primary-color); color: #fff;
+        border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold;
+        cursor: pointer; transition: 0.3s; margin-top: 20px;
+    }
+    .btn-pay:hover { background: var(--accent-color); }
+</style>
+
+<section class="hero" style="height: 30vh; min-height: 250px;">
+    <h1>Secure Checkout</h1>
+    <p>Complete your booking to secure your seat.</p>
+</section>
+
+<div class="checkout-container">
+    
+    <div class="payment-section">
+        <div class="card-box">
+            <div class="section-header">
+                <h3>Payment Method</h3>
+                <div class="cc-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                </div>
+            </div>
+
+            <form id="paymentForm" onsubmit="processPayment(event)">
+                <div style="margin-bottom: 20px;">
+                    <label class="input-label">Cardholder Name</label>
+                    <input type="text" class="input-field en-font" placeholder="JOHN DOE" required>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label class="input-label">Card Number</label>
+                    <input type="text" class="input-field en-font" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <label class="input-label">Expiry Date</label>
+                        <input type="text" class="input-field en-font" placeholder="MM/YY" maxlength="5" required>
+                    </div>
+                    <div class="form-col">
+                        <label class="input-label">CVV</label>
+                        <input type="password" class="input-field en-font" placeholder="123" maxlength="4" required>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px; display: flex; gap: 10px; align-items: center;">
+                    <i class="fas fa-lock" style="color: green;"></i>
+                    <span style="font-size: 0.8rem; color: #666;">Payments are processed via 256-bit SSL encryption. Your data is safe.</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="summary-section">
+        <div class="card-box" style="position: sticky; top: 20px;">
+            <div class="section-header">
+                <h3>Order Summary</h3>
+            </div>
+
+            <div class="flight-preview">
+                <div class="route-display" id="sum-route">RUH <i class="fas fa-plane"></i> LHR</div>
+                <div class="date-display" id="sum-date">2026-10-10</div>
+                <div class="date-display" id="sum-class" style="color:var(--accent-color); font-weight:bold; margin-top:5px;">Economy Class</div>
+            </div>
+
+            <div class="summary-row">
+                <span>Base Fare</span>
+                <span class="en-font" id="price-base">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Taxes & Fees</span>
+                <span class="en-font" id="price-tax">$0.00</span>
+            </div>
+            <div class="summary-row" style="color: green;">
+                <span>Discount</span>
+                <span class="en-font">-$0.00</span>
+            </div>
+
+            <div class="total-row">
+                <span>Total</span>
+                <span class="en-font" id="price-total">$0.00</span>
+            </div>
+
+            <button onclick="document.getElementById('paymentForm').dispatchEvent(new Event('submit'))" class="btn-pay">
+                Pay Now <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="processing-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.9); z-index:9999; text-align:center; padding-top:20%;">
+    <div class="spinner" style="border: 5px solid #f3f3f3; border-top: 5px solid var(--accent-color); border-radius: 50%; width: 60px; height: 60px; animation: spin 1s linear infinite; margin: 0 auto 20px;"></div>
+    <h2 style="color:var(--primary-color);">Processing Payment...</h2>
+    <p>Please do not close this window.</p>
+</div>
+
+{% block scripts %}
+<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			// 1. Get Booking Data
+			const bookingData = localStorage.getItem('fh_latest_booking');
+				
+				if (bookingData) {
+					const data = JSON.parse(bookingData);
+					
+					// 2. Populate UI Text
+					document.getElementById('sum-route').innerHTML = `${data.from} <i class="fas fa-arrow-right"></i> ${data.to}`;
+					document.getElementById('sum-date').innerText = data.date;
+					
+					// Show "3 Passengers" instead of just Class
+					document.getElementById('sum-class').innerHTML = `
+						<span style="color:var(--accent-color); font-weight:bold;">${data.cabin}</span> 
+						<span style="color:#666; font-size:0.9em;">(x${data.passengers})</span>
+					`;
+
+					// 3. THE MATH 🧮
+					const count = parseInt(data.passengers) || 1;
+					const unitPrice = parseFloat(data.pricePerPerson) || 0;
+
+					const baseTotal = unitPrice * count;
+					const tax = Math.floor(baseTotal * 0.15); // 15% Tax
+					const finalTotal = baseTotal + tax;
+
+					// 4. Display Money
+					document.getElementById('price-base').innerText = "$" + baseTotal.toLocaleString();
+					document.getElementById('price-tax').innerText = "$" + tax.toLocaleString();
+					document.getElementById('price-total').innerText = "$" + finalTotal.toLocaleString();
+				}
+			});
+
+			function processPayment(e) {
+				e.preventDefault();
+				document.getElementById('processing-overlay').style.display = 'block';
+				setTimeout(() => {
+					window.location.href = "/invoice/";
+				}, 3000);
+			}
+</script>
+{% endblock %}
+
+<style>
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+</style>

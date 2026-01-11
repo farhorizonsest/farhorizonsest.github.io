@@ -3,333 +3,770 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Ticket Receipt | Far Horizons</title>
-    
-    <link rel="stylesheet" href="assets/css/main.css">
+    <title>E-Ticket Receipt &amp; Tax Invoice | Far Horizons</title>
+	
+    <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+    
 
     <style>
-        body { background: #f0f2f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
-        
-        .confirmation-container {
-            max-width: 900px; margin: 30px auto; padding: 20px;
-            text-align: center;
+        /* === MOBILE MENU STYLES === */
+        /* Default: Hidden on Desktop */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            z-index: 2000; /* Ensure it floats above everything */
+            margin-left: 20px;
         }
 
-        /* --- CONTROLS --- */
-        .controls-wrapper {
-            background: #fff; padding: 15px; border-radius: 50px;
-            display: inline-flex; align-items: center; gap: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-top: 30px;
-        }
-        
-        .lang-select {
-            padding: 10px 20px; border: 2px solid #ddd; border-radius: 30px;
-            font-size: 1rem; outline: none; background: #f9f9f9; cursor: pointer;
-        }
+        /* Mobile Breakpoint: Safe Zone set to 850px to cover your Tecno Spark */
+        @media screen and (max-width: 850px) {
+            
+            /* 1. Show the Menu Button */
+            .menu-toggle {
+                display: block;
+            }
 
-        .btn-action {
-            padding: 12px 30px; border-radius: 50px; font-weight: bold; cursor: pointer;
-            transition: 0.3s; border: none; font-size: 1rem;
+            /* 2. Transform Nav Links into Side Panel */
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%; /* Hidden to the right */
+                width: 280px; /* Panel Width */
+                height: 100vh;
+                background: #ffffff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center; /* Center items vertically */
+                align-items: center;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: 0.4s ease-in-out; /* Smooth Slide Effect */
+                z-index: 1000;
+                padding-top: 60px;
+            }
+
+            /* 3. The Class that slides it in */
+            .nav-links.active {
+                right: 0; 
+            }
+
+            /* Mobile Link Styling */
+            .nav-links a {
+                margin: 20px 0;
+                font-size: 1.2rem;
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
         }
-        .btn-download { background: #1a2a3a; color: #fff; }
-        .btn-download:hover { background: #c5a059; }
-        
-        /* --- THE A4 DOCUMENT CONTAINER --- */
-        #printable-ticket {
-            background: #ffffff;
-            width: 100%; max-width: 800px; margin: 0 auto; padding: 40px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05); text-align: left;
-            position: relative; border-top: 10px solid #1a2a3a;
-        }
-
-        /* RTL MODE (Activated via JS) */
-        #printable-ticket.rtl-mode {
-            direction: rtl; text-align: right; font-family: 'Tahoma', 'Segoe UI', sans-serif;
-        }
-        #printable-ticket.rtl-mode .doc-header, 
-        #printable-ticket.rtl-mode .t-header,
-        #printable-ticket.rtl-mode .t-route { flex-direction: row-reverse; } /* Flip specific flex rows if needed, but mostly Dir RTL handles it */
-        
-        #printable-ticket.rtl-mode .dh-info { text-align: left; } /* Flip header info */
-        #printable-ticket.rtl-mode .t-code { line-height: 1; } 
-        
-        /* HEADER */
-        .doc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
-        .dh-logo { font-size: 1.8rem; font-weight: bold; color: #1a2a3a; text-transform: uppercase; }
-        .dh-logo span { color: #c5a059; }
-        .dh-info { text-align: right; font-size: 0.85rem; color: #666; line-height: 1.6; }
-        .dh-title { font-size: 1.2rem; font-weight: bold; color: #1a2a3a; margin-bottom: 5px; text-transform: uppercase; }
-
-        /* INVOICE INFO */
-        .doc-info-grid { display: flex; justify-content: space-between; margin-bottom: 30px; background: #f9f9f9; padding: 15px; border-radius: 6px; }
-        .dig-col h4 { margin: 0 0 5px 0; font-size: 0.8rem; color: #888; text-transform: uppercase; }
-        .dig-col p { margin: 0; font-weight: bold; font-size: 1rem; color: #333; }
-
-        /* THE TICKET BOX */
-        .ticket-box { border: 1px solid #ddd; border-radius: 8px; display: flex; overflow: hidden; font-family: Arial, sans-serif; margin-bottom: 30px; }
-        .ticket-left { flex: 7; background-color: #1a2a3a; color: #ffffff; padding: 20px; border-right: 2px dashed #c5a059; }
-        
-        /* RTL FLIP for Ticket Box */
-        #printable-ticket.rtl-mode .ticket-box { flex-direction: row-reverse; }
-        #printable-ticket.rtl-mode .ticket-left { border-right: none; border-left: 2px dashed #c5a059; }
-
-        .ticket-right { flex: 3; background-color: #f4f4f4; color: #000; padding: 20px; display: flex; flex-direction: column; justify-content: center; }
-        
-        /* Ticket Elements */
-        .t-header { display: flex; justify-content: space-between; border-bottom: 1px solid #555; padding-bottom: 10px; margin-bottom: 15px; }
-        .t-code { font-size: 2.5rem; font-weight: bold; color: #c5a059; line-height: 1; }
-        .t-route { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .t-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .t-label { font-size: 0.7rem; text-transform: uppercase; opacity: 0.7; display: block; margin-bottom: 3px; }
-        .t-val { font-size: 1rem; font-weight: bold; }
-        
-        /* FOOTER */
-        .doc-footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; font-size: 0.8rem; color: #777; }
-        .df-socials span { margin: 0 10px; font-weight: bold; color: #1a2a3a; }
-        .df-address { margin-bottom: 10px; line-height: 1.6; }
     </style>
 </head>
-<body>
+<body class="en">
 
-	<div class="confirmation-container">
+    <header style="position: relative; z-index: 1500;">
+        <div class="logo">
+            <i class="fas fa-paper-plane"></i>
+            <div class="en-font">Far <span>Horizons</span></div>
+        </div>
         
-        <div id="loading-msg">Generating Receipt...</div>
+        <nav class="nav-links">
+            <a href="/" data-i18n="nav.home">Home</a>
+            <a href="/Services/" data-i18n="nav.services">Services</a>
+            <a href="/Packages/" data-i18n="nav.packages">Packages</a>
+            <a href="/Products/" data-i18n="nav.shop">Shop</a>
+            <a href="/About_Us/" data-i18n="nav.about">About</a>
+            <a href="/Contact_Us/" data-i18n="nav.contact">Contact</a>
+        </nav>
 
-        <div id="content-area" style="display:none;">
-            <i class="fas fa-check-circle" style="font-size: 4rem; color: #28a745; margin-bottom:20px;"></i>
-            <h2>Booking Confirmed!</h2>
-            <p style="margin-bottom:30px;">Your official e-ticket is ready for download.</p>
+        <div style="display: flex; align-items: center;">
+            <button class="lang-btn" onclick="toggleLanguage()">
+                <i class="fas fa-globe"></i> <span id="lang-text">العربية</span>
+            </button>
 
-            <div class="controls-wrapper">
-                <select id="pdf-lang" class="lang-select">
-                    <option value="en">🇬🇧 English Receipt</option>
-                    <option value="ar">🇸🇦 Arabic Receipt</option>
-                </select>
-                <button onclick="downloadPDF()" class="btn-action btn-download">
-                    Download PDF Receipt
-                </button>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
             </div>
-            <div style="margin-top: 15px;">
-                <a href="index.html" style="color:#666; text-decoration:underline;">Return to Home</a>
-            </div>
+        </div>
+    </header>
 
-            <br><br>
+    <main>
+        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.5/JsBarcode.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-            <div id="printable-ticket">
-                
-                <div class="doc-header">
-                    <div>
-                        <div class="dh-logo">FAR <span>HORIZONS</span></div>
-                        <div style="font-size:0.8rem; letter-spacing:1px; margin-top:5px;" id="lbl-tagline">PREMIUM TRAVEL AGENCY</div>
+<style>
+    /* =========================================
+       2. ENTERPRISE CSS VARIABLES
+       ========================================= */
+    :root {
+        --inv-paper: #ffffff;
+        --inv-ink: #1a1a1a;
+        --inv-border: #dcdcdc;
+        --brand-navy: #0f1c2e;
+        --brand-gold: #c5a059;
+        --brand-gold-dim: #e6dcc5;
+        --status-green: #2ecc71;
+        --status-bg: #eafaf1;
+        --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        --font-mono: 'Courier New', Courier, monospace;
+    }
+
+    /* =========================================
+       3. GLOBAL PAGE STYLES (Screen Only)
+       ========================================= */
+    .invoice-page-wrapper {
+        background-color: #f4f7f6;
+        padding: 40px 20px;
+        min-height: 100vh;
+        font-family: var(--font-main);
+    }
+
+    /* =========================================
+       4. THE TICKET CONTAINER (The "Paper")
+       ========================================= */
+    #invoice-element {
+        max-width: 850px;
+        margin: 0 auto;
+        background: var(--inv-paper);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        border-radius: 4px; /* Sharp corners for professional look */
+        overflow: hidden;
+        position: relative;
+        border-top: 8px solid var(--brand-navy);
+    }
+
+    .invoice-body {
+        padding: 50px;
+    }
+
+    /* Watermark Background */
+    #invoice-element::before {
+        content: '\f5b0'; /* FontAwesome Plane */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-15deg);
+        font-size: 400px;
+        color: rgba(0,0,0,0.02);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    /* =========================================
+       5. HEADER & BRANDING
+       ========================================= */
+    .ticket-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--brand-navy);
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .logo-area h1 {
+        font-size: 26px;
+        color: var(--brand-navy);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin: 0;
+    }
+    .logo-area span {
+        font-size: 12px;
+        color: var(--brand-gold);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+
+    .meta-area {
+        text-align: right;
+    }
+    .booking-ref-box {
+        background: var(--brand-navy);
+        color: #fff;
+        padding: 5px 15px;
+        font-family: var(--font-mono);
+        font-size: 16px;
+        letter-spacing: 1px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    .issue-date {
+        font-size: 12px;
+        color: #666;
+        display: block;
+    }
+
+    /* =========================================
+       6. PASSENGER SECTION
+       ========================================= */
+    .passenger-section {
+        margin-bottom: 35px;
+        position: relative;
+        z-index: 1;
+    }
+    .lbl {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: #888;
+        letter-spacing: 0.5px;
+        display: block;
+        margin-bottom: 4px;
+    }
+    .val-lg {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--inv-ink);
+        text-transform: uppercase;
+    }
+    .status-badge {
+        float: right;
+        background: var(--status-bg);
+        color: var(--status-green);
+        border: 1px solid var(--status-green);
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 11px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    /* =========================================
+       7. FLIGHT VISUALIZER (The "Strip")
+       ========================================= */
+    .flight-strip {
+        background: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        border-left: 5px solid var(--brand-gold);
+        padding: 25px;
+        border-radius: 6px;
+        margin-bottom: 35px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .strip-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .city-block { min-width: 80px; }
+    .iata-code { font-size: 42px; font-weight: 900; color: var(--brand-navy); line-height: 1; }
+    .city-name { font-size: 14px; text-transform: uppercase; color: #555; font-weight: 600; }
+
+    /* The Line between cities */
+    .flight-line {
+        flex-grow: 1;
+        height: 2px;
+        background: #ccc;
+        margin: 0 30px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .flight-line::before, .flight-line::after {
+        content: ''; width: 6px; height: 6px; background: var(--brand-navy); border-radius: 50%; position: absolute;
+    }
+    .flight-line::before { left: 0; }
+    .flight-line::after { right: 0; }
+    
+    .plane-symbol {
+        background: #f8f9fa;
+        padding: 0 10px;
+        color: var(--brand-gold);
+        font-size: 20px;
+    }
+
+    /* Data Grid */
+    .strip-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        padding-top: 15px;
+        border-top: 1px dashed #ccc;
+    }
+    .data-point span { font-size: 15px; font-weight: bold; color: #333; }
+
+    /* =========================================
+       8. FINANCIAL BREAKDOWN (The Money)
+       ========================================= */
+    .financials {
+        margin-bottom: 40px;
+        position: relative;
+        z-index: 1;
+    }
+    .fin-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .fin-table th { text-align: left; border-bottom: 2px solid #ddd; padding: 8px 0; color: #666; font-size: 11px; text-transform: uppercase; }
+    .fin-table td { padding: 12px 0; border-bottom: 1px solid #eee; color: #333; }
+    .fin-table .amt { text-align: right; font-family: var(--font-mono); font-weight: 600; }
+    
+    .total-row td { 
+        border-top: 2px solid var(--brand-navy) !important; 
+        font-size: 18px; 
+        font-weight: 800; 
+        color: var(--brand-navy); 
+        padding-top: 15px;
+    }
+
+    /* =========================================
+       9. LEGAL TEXT (The "Realism" Part)
+       ========================================= */
+    .legal-block {
+        font-size: 9px;
+        color: #999;
+        text-align: justify;
+        line-height: 1.4;
+        margin-bottom: 30px;
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+    }
+
+    /* =========================================
+       10. SECURITY FOOTER (Barcode/QR)
+       ========================================= */
+    .security-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        background: #fdfdfd;
+        border: 2px dashed #ccc;
+        padding: 20px;
+        border-radius: 6px;
+    }
+
+    .barcode-box svg { height: 50px; width: 100%; }
+    .qr-box { border: 4px solid #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    
+    /* =========================================
+       11. CONTROL BUTTONS (Hide on Print)
+       ========================================= */
+    .control-panel {
+        text-align: center;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    .btn-sys {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: 0.3s;
+    }
+    .btn-navy { background: var(--brand-navy); color: #fff; }
+    .btn-gold { background: var(--brand-gold); color: #fff; }
+    .btn-outline { background: transparent; border: 2px solid #ddd; color: #555; }
+    
+    .btn-sys:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+    /* =========================================
+       12. PRINT MEDIA QUERY (THE ISOLATION)
+       ========================================= */
+    @media print {
+        body * { visibility: hidden; } /* Hide EVERYTHING on the page */
+        #invoice-element, #invoice-element * { 
+            visibility: visible; /* Show ONLY the ticket */
+        }
+        #invoice-element {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            margin: 0;
+            box-shadow: none;
+            border: none;
+        }
+        .control-panel { display: none !important; }
+        .invoice-page-wrapper { padding: 0; background: #fff; }
+    }
+
+    @media (max-width: 600px) {
+        .invoice-body { padding: 20px; }
+        .strip-grid { grid-template-columns: 1fr 1fr; }
+        .security-footer { flex-direction: column; align-items: center; gap: 20px; }
+    }
+</style>
+
+<div class="invoice-page-wrapper">
+
+    <div id="invoice-element">
+        
+        <div class="invoice-body">
+            <header class="ticket-header">
+                <div class="logo-area">
+                    <h1>Far Horizons</h1>
+                    <span>Official E-Ticket Receipt</span>
+                </div>
+                <div class="meta-area">
+                    <div class="booking-ref-box" id="disp-ref">FH-XXXX</div>
+                    <span class="issue-date">Issued: <span id="disp-today">---</span></span>
+                    <span class="issue-date">IATA: 96-3 4421 2</span>
+                </div>
+            </header>
+
+            <section class="passenger-section">
+                <span class="status-badge">Confirmed</span>
+                <span class="lbl">Passenger Name</span>
+                <div class="val-lg" id="disp-name">Loading...</div>
+            </section>
+
+            <section class="flight-strip">
+                <div class="strip-row">
+                    <div class="city-block" style="text-align:left;">
+                        <div class="iata-code" id="disp-from-code">RUH</div>
+                        <div class="city-name" id="disp-from-city">Riyadh</div>
                     </div>
-                    <div class="dh-info">
-                        <div class="dh-title" id="lbl-title">E-Ticket Receipt</div>
-                        <span id="lbl-ref">Ref:</span> <span id="doc-ref">FH-0000</span><br>
-                        <span id="lbl-date">Date:</span> <span id="doc-date">--/--/--</span>
+
+                    <div class="flight-line">
+                        <i class="fas fa-plane plane-symbol"></i>
+                    </div>
+
+                    <div class="city-block" style="text-align:right;">
+                        <div class="iata-code" id="disp-to-code">LHR</div>
+                        <div class="city-name" id="disp-to-city">London</div>
                     </div>
                 </div>
 
-                <div class="doc-info-grid">
-                    <div class="dig-col">
-                        <h4 id="lbl-pname">Passenger Name</h4>
-                        <p id="doc-name">Loading...</p>
+                <div class="strip-grid">
+                    <div class="data-point">
+                        <span class="lbl">Date</span>
+                        <span id="disp-date">---</span>
                     </div>
-                    <div class="dig-col">
-                        <h4 id="lbl-status">Ticket Status</h4>
-                        <p style="color:#28a745;"><span id="val-status">Confirmed</span></p>
+                    <div class="data-point">
+                        <span class="lbl">Time</span>
+                        <span>14:30</span> </div>
+                    <div class="data-point">
+                        <span class="lbl">Class</span>
+                        <span id="disp-class">---</span>
                     </div>
-                    <div class="dig-col">
-                        <h4 id="lbl-office">Issuing Office</h4>
-                        <p id="val-office">Riyadh HQ</p>
-                    </div>
-                </div>
-
-                <div class="ticket-box">
-                    <div class="ticket-left">
-                        <div class="t-header">
-                            <div style="font-weight:bold;" id="lbl-bpass">BOARDING PASS</div>
-                            <div style="background:#c5a059; color:#000; padding:2px 6px; border-radius:4px; font-weight:bold; font-size:0.8rem;" id="t-class">ECO</div>
-                        </div>
-                        <div class="t-route">
-                            <div>
-                                <div class="t-code" id="t-from">RUH</div>
-                                <span class="t-label" id="lbl-dept">DEPARTURE</span>
-                            </div>
-                            <div style="font-size: 2rem;">✈️</div>
-                            <div style="text-align: right;">
-                                <div class="t-code" id="t-to">LHR</div>
-                                <span class="t-label" id="lbl-arr">ARRIVAL</span>
-                            </div>
-                        </div>
-                        <div class="t-grid">
-                            <div><span class="t-label" id="lbl-flight">Flight</span><span class="t-val">FH-2026</span></div>
-                            <div><span class="t-label" id="lbl-tdate">Date</span><span class="t-val" id="t-date">--/--</span></div>
-                            <div><span class="t-label" id="lbl-gate">Gate</span><span class="t-val">A04</span></div>
-                            <div><span class="t-label" id="lbl-seat">Seat</span><span class="t-val">22A</span></div>
-                        </div>
-                    </div>
-                    <div class="ticket-right">
-                        <div style="text-align:center; margin-bottom:10px; font-weight:bold;" id="lbl-stub">STUB</div>
-                        <div style="margin-bottom:5px;"><span class="t-label" id="lbl-sname">Name</span><strong id="s-name">...</strong></div>
-                        <div style="margin-bottom:5px;"><span class="t-label" id="lbl-sroute">Route</span><strong id="s-route">...</strong></div>
-                        <div><span class="t-label" id="lbl-sdate">Date</span><strong id="s-date">...</strong></div>
+                    <div class="data-point">
+                        <span class="lbl">Flight</span>
+                        <span>FH-702</span>
                     </div>
                 </div>
+            </section>
 
-                <div style="font-size: 0.75rem; color:#999; margin-bottom: 30px; text-align: justify;" id="lbl-legal">
-                    <strong>Important Notice:</strong> This document serves as a booking confirmation request. Final boarding pass issuance is subject to payment clearance. Please present this document at the check-in counter.
+            <section class="financials">
+                <span class="lbl" style="margin-bottom:10px; border-bottom:1px solid #eee; padding-bottom:5px;">Payment Details</span>
+                <table class="fin-table">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th class="amt">Amount (USD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Airfare (<span id="disp-qty">1</span> Traveler)</td>
+                            <td class="amt" id="disp-base">$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Taxes & Fees (VAT + Airport Tax)</td>
+                            <td class="amt" id="disp-tax">$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Service Charge</td>
+                            <td class="amt">$0.00</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>TOTAL PAID</td>
+                            <td class="amt" id="disp-total">$0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="legal-block">
+                <strong>CONDITIONS OF CONTRACT:</strong><br>
+                1. As used in this contract "ticket" means this passenger ticket and baggage check, or this itinerary/receipt if applicable, in the case of an electronic ticket, of which these conditions and the notices form part, "carriage" is equivalent to "transportation", "carrier" means all air carriers that carry or undertake to carry the passenger or his baggage hereunder or perform any other service incidental to such air carriage, "electronic ticket" means the Itinerary/Receipt issued by or on behalf of Carrier, the Electronic Coupons and, if applicable, a Boarding Document.
+                <br>2. Carriage hereunder is subject to the rules and limitations relating to liability established by the Warsaw Convention unless such carriage is not "international carriage" as defined by that Convention.
+                <br>3. To the extent not in conflict with the foregoing carriage and other services performed by each carrier are subject to: (i) provisions contained in the ticket; (ii) applicable tariffs; (iii) carrier's conditions of carriage and related regulations which are made part hereof (and are available on application at the offices of carrier), except in transportation between a place in the United States or Canada and any place outside thereof to which tariffs in force in those countries apply.
+                <br><strong>BAGGAGE ALLOWANCE:</strong> Economy: 23KG x 1. Business: 32KG x 2. First: 32KG x 3. Carry-on limited to 7KG.
+            </section>
+
+            <footer class="security-footer">
+                <div class="barcode-box">
+                    <svg id="barcode"></svg>
+                    <div style="text-align:center; font-size:9px; letter-spacing:3px;">BOARDING TOKEN</div>
                 </div>
-
-                <div class="doc-footer">
-                    <div class="df-socials">
-                        <span>🌐 www.farhorizons.sa</span>
-                        <span>📷 @farhorizons</span>
-                        <span>🐦 @farhorizons_ksa</span>
-                    </div>
-                    <div class="df-address" id="lbl-address">
-                        <strong>Far Horizons Travel & Tourism Est.</strong><br>
-                        King Fahd Road, Al Olaya District, P.O. Box 12345<br>
-                        Riyadh 11471, Kingdom of Saudi Arabia<br>
-                        Phone: +966 50 000 0000 | Email: support@farhorizons.sa
-                    </div>
-                    <div class="df-copy">
-                        © 2026 Far Horizons. All Rights Reserved. Developed by MH Studios™.
-                    </div>
-                </div>
-
-            </div>
-            </div>
+                <div class="qr-box" id="qrcode"></div>
+            </footer>
+        </div>
     </div>
 
-    <script>
-        // --- TRANSLATION DICTIONARY ---
-        const i18n = {
-            en: {
-                tagline: "PREMIUM TRAVEL AGENCY",
-                title: "E-Ticket Receipt",
-                ref: "Ref:", date: "Date:",
-                pname: "Passenger Name", status: "Ticket Status", office: "Issuing Office",
-                val_status: "Confirmed", val_office: "Riyadh HQ",
-                bpass: "BOARDING PASS", stub: "STUB",
-                dept: "DEPARTURE", arr: "ARRIVAL",
-                flight: "Flight", tdate: "Date", gate: "Gate", seat: "Seat",
-                sname: "Name", sroute: "Route", sdate: "Date",
-                legal: "Important Notice: This document serves as a booking confirmation request. Final boarding pass issuance is subject to payment clearance. Please present this document at the check-in counter.",
-                address: "<strong>Far Horizons Travel & Tourism Est.</strong><br>King Fahd Road, Al Olaya District, P.O. Box 12345<br>Riyadh 11471, Kingdom of Saudi Arabia<br>Phone: +966 50 000 0000 | Email: support@farhorizons.sa"
-            },
-            ar: {
-                tagline: "وكالة سفر وسياحة فاخرة",
-                title: "إيصال التذكرة الإلكترونية",
-                ref: "المرجع:", date: "التاريخ:",
-                pname: "اسم المسافر", status: "حالة التذكرة", office: "مكتب الإصدار",
-                val_status: "مؤكد (بانتظار الدفع)", val_office: "المركز الرئيسي - الرياض",
-                bpass: "بطاقة الصعود", stub: "الكعب",
-                dept: "المغادرة", arr: "الوصول",
-                flight: "الرحلة", tdate: "التاريخ", gate: "البوابة", seat: "المقعد",
-                sname: "الاسم", sroute: "المسار", sdate: "التاريخ",
-                legal: "ملاحظة هامة: تعتبر هذه الوثيقة طلب تأكيد حجز مبدئي. يخضع إصدار بطاقة الصعود النهائية لإتمام عملية الدفع. يرجى إبراز هذه الوثيقة عند كاونتر تسجيل الدخول.",
-                address: "<strong>آفاق السياحة للسفر والسياحة</strong><br>طريق الملك فهد، حي العليا، ص.ب 12345<br>الرياض 11471، المملكة العربية السعودية<br>هاتف: 0000 000 50 966+ | بريد: support@farhorizons.sa"
-            }
-        };
+    <div class="control-panel">
+        <button class="btn-sys btn-outline" onclick="window.location.href='/'">
+            <i class="fas fa-home"></i> Home
+        </button>
+        <button class="btn-sys btn-navy" onclick="window.print()">
+            <i class="fas fa-print"></i> Print Ticket
+        </button>
+        <button class="btn-sys btn-gold" onclick="generatePDF()">
+            <i class="fas fa-file-pdf"></i> Download PDF
+        </button>
+    </div>
 
-        // --- LOAD DATA ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const dataStr = localStorage.getItem('fh_latest_booking');
-            document.getElementById('loading-msg').style.display = 'none';
-            document.getElementById('content-area').style.display = 'block';
+</div>
 
-            if (dataStr) {
-                const data = JSON.parse(dataStr);
-                
-                // Set Static Data (Data that doesn't change with language)
-                document.getElementById('doc-name').innerText = data.name.toUpperCase();
-                document.getElementById('doc-ref').innerText = data.ref;
-                document.getElementById('doc-date').innerText = new Date().toLocaleDateString();
 
-                const fromC = data.from.substring(0,3).toUpperCase();
-                const toC = data.to.substring(0,3).toUpperCase();
-                
-                document.getElementById('t-class').innerText = data.cabin.substring(0,3);
-                document.getElementById('t-from').innerText = fromC;
-                document.getElementById('t-to').innerText = toC;
-                document.getElementById('t-date').innerText = data.date;
-                
-                document.getElementById('s-name').innerText = data.name.split(' ')[0];
-                document.getElementById('s-route').innerText = fromC + "-" + toC;
-                document.getElementById('s-date').innerText = data.date;
-            }
-        });
-
-        // --- DOWNLOAD LOGIC ---
-        function downloadPDF() {
-            const lang = document.getElementById('pdf-lang').value;
-            const element = document.getElementById('printable-ticket');
-            const btn = document.querySelector('.btn-download');
-            
-            // 1. SWITCH LANGUAGE
-            updateTicketLanguage(lang);
-
-            // 2. GENERATE PDF
-            const oldText = btn.innerText;
-            btn.innerText = 'Printing...';
-            btn.style.opacity = '0.7';
-
-            const opt = {
-                margin:       0,
-                filename:     `FarHorizons_Receipt_${lang.toUpperCase()}.pdf`,
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2, useCORS: true, backgroundColor: "#ffffff" },
-                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-
-            setTimeout(() => {
-                html2pdf().set(opt).from(element).save().then(() => {
-                    btn.innerText = oldText;
-                    btn.style.opacity = '1';
-                    // Optional: Switch back to English default after download
-                    // updateTicketLanguage('en'); 
-                });
-            }, 500);
+<script>
+// --- TRANSLATION DICTIONARY (PROVIDED BY USER) ---
+    const i18n = {
+        en: {
+            tagline: "PREMIUM TRAVEL AGENCY",
+            ref: "Ref:", date: "Date:",
+            pname: "Passenger Name", 
+            val_status: "Confirmed", 
+            bpass: "BOARDING TOKEN", 
+            dept: "DEPARTURE", arr: "ARRIVAL",
+            flight: "Flight", tdate: "Date", gate: "Gate", seat: "Class",
+            desc: "Description", amount: "Amount", total: "TOTAL PAID",
+            legal: "Important Notice: This document serves as a booking confirmation request. Final boarding pass issuance is subject to payment clearance.",
+            address: "<strong>Far Horizons Travel & Tourism Est.</strong><br>King Fahd Road, Riyadh, KSA"
+        },
+        ar: {
+            tagline: "وكالة سفر وسياحة فاخرة",
+            ref: "المرجع:", date: "التاريخ:",
+            pname: "اسم المسافر", 
+            val_status: "مؤكد (مدفوع)", 
+            bpass: "رمز الصعود", 
+            dept: "المغادرة", arr: "الوصول",
+            flight: "الرحلة", tdate: "التاريخ", gate: "البوابة", seat: "الدرجة",
+            desc: "الوصف", amount: "المبلغ", total: "الإجمالي المدفوع",
+            legal: "ملاحظة هامة: تعتبر هذه الوثيقة إيصال تأكيد حجز مبدئي. يخضع إصدار بطاقة الصعود النهائية لإتمام إجراءات المطار.",
+            address: "<strong>مؤسسة آفاق السياحة للسفر والسياحة</strong><br>طريق الملك فهد، العليا، الرياض<br>المملكة العربية السعودية"
+        }
+    };
+	
+	function applyLanguage(lang) {
+        const t = i18n[lang] || i18n['en'];
+        
+        // Apply Direction
+        if (lang === 'ar') {
+            document.body.classList.add('rtl');
+        } else {
+            document.body.classList.remove('rtl');
         }
 
-        // --- HELPER: APPLY TRANSLATIONS ---
-        function updateTicketLanguage(lang) {
-            const doc = document.getElementById('printable-ticket');
-            const t = i18n[lang];
+        // Apply Text Labels
+        document.getElementById('lbl-tagline').innerText = t.tagline;
+        document.getElementById('lbl-date').innerText = t.date;
+        document.getElementById('lbl-pname').innerText = t.pname;
+        document.getElementById('lbl-val-status').innerText = t.val_status;
+        document.getElementById('lbl-tdate').innerText = t.tdate;
+        document.getElementById('lbl-flight').innerText = t.flight;
+        document.getElementById('lbl-seat').innerText = t.seat;
+        document.getElementById('lbl-gate').innerText = t.gate;
+        document.getElementById('lbl-desc').innerText = t.desc; // Table Header
+        document.getElementById('lbl-amount').innerText = t.amount; // Table Header
+        document.getElementById('lbl-total').innerText = t.total;
+        document.getElementById('lbl-legal').innerText = t.legal;
+        document.getElementById('lbl-address').innerHTML = t.address;
+        document.getElementById('lbl-bpass').innerText = t.bpass;
+    }
+		
+    document.addEventListener('DOMContentLoaded', () => {
+        initInvoice();
+    });
 
-            // Toggle RTL Class
-            if (lang === 'ar') {
-                doc.classList.add('rtl-mode');
-            } else {
-                doc.classList.remove('rtl-mode');
-            }
+    let currentBooking = {};
 
-            // Update Labels
-            document.getElementById('lbl-tagline').innerText = t.tagline;
-            document.getElementById('lbl-title').innerText = t.title;
-            document.getElementById('lbl-ref').innerText = t.ref;
-            document.getElementById('lbl-date').innerText = t.date;
-            document.getElementById('lbl-pname').innerText = t.pname;
-            document.getElementById('lbl-status').innerText = t.status;
-            document.getElementById('lbl-office').innerText = t.office;
-            document.getElementById('val-status').innerText = t.val_status;
-            document.getElementById('val-office').innerText = t.val_office;
-            document.getElementById('lbl-bpass').innerText = t.bpass;
-            document.getElementById('lbl-stub').innerText = t.stub;
-            document.getElementById('lbl-dept').innerText = t.dept;
-            document.getElementById('lbl-arr').innerText = t.arr;
-            document.getElementById('lbl-flight').innerText = t.flight;
-            document.getElementById('lbl-tdate').innerText = t.tdate;
-            document.getElementById('lbl-gate').innerText = t.gate;
-            document.getElementById('lbl-seat').innerText = t.seat;
-            document.getElementById('lbl-sname').innerText = t.sname;
-            document.getElementById('lbl-sroute').innerText = t.sroute;
-            document.getElementById('lbl-sdate').innerText = t.sdate;
-            document.getElementById('lbl-legal').innerText = t.legal;
-            document.getElementById('lbl-address').innerHTML = t.address;
+    function initInvoice() {
+        console.log("Initializing Enterprise Ticket System...");
+        
+        // 1. Fetch Data
+        const raw = localStorage.getItem('fh_latest_booking');
+        
+        if (!raw) {
+            handleError();
+            return;
+        }
+
+        try {
+            currentBooking = JSON.parse(raw);
+            
+            // 2. Render Data
+            renderHeader();
+            renderFlight();
+            renderFinance();
+            
+            // 3. Generate Codes
+            renderCodes();
+
+        } catch (e) {
+            console.error(e);
+            handleError();
+        }
+    }
+
+    // --- RENDER FUNCTIONS ---
+    function renderHeader() {
+        const today = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase();
+        document.getElementById('disp-today').innerText = today;
+        document.getElementById('disp-ref').innerText = currentBooking.ref || "FH-ERR";
+        document.getElementById('disp-name').innerText = currentBooking.name || "VALUED GUEST";
+    }
+
+    function renderFlight() {
+        // Safe substrings for City Codes (First 3 chars)
+        const fromStr = currentBooking.from || "RUH";
+        const toStr = currentBooking.to || "LHR";
+        
+        document.getElementById('disp-from-code').innerText = fromStr.substring(0,3).toUpperCase();
+        document.getElementById('disp-to-code').innerText = toStr.substring(0,3).toUpperCase();
+        
+        document.getElementById('disp-from-city').innerText = fromStr;
+        document.getElementById('disp-to-city').innerText = toStr;
+        
+        document.getElementById('disp-date').innerText = currentBooking.date || "OPEN";
+        document.getElementById('disp-class').innerText = (currentBooking.cabin || "Economy").toUpperCase();
+    }
+
+    function renderFinance() {
+        const qty = parseInt(currentBooking.passengers) || 1;
+        const unit = parseFloat(currentBooking.pricePerPerson) || 0;
+        
+        const base = unit * qty;
+        const tax = base * 0.15;
+        const total = base + tax;
+
+        document.getElementById('disp-qty').innerText = qty;
+        document.getElementById('disp-base').innerText = fmtMoney(base);
+        document.getElementById('disp-tax').innerText = fmtMoney(tax);
+        document.getElementById('disp-total').innerText = fmtMoney(total);
+    }
+
+    function renderCodes() {
+        // Barcode (1D)
+        JsBarcode("#barcode", currentBooking.ref || "000000", {
+            format: "CODE128",
+            lineColor: "#0f1c2e",
+            width: 2,
+            height: 40,
+            displayValue: false
+        });
+
+        // QR Code (2D) - Clear old if exists
+        document.getElementById("qrcode").innerHTML = "";
+        
+        // Secure Payload
+        const payload = `FAR_HORIZONS|REF:${currentBooking.ref}|PAX:${currentBooking.name}|FLT:FH702`;
+        
+        new QRCode(document.getElementById("qrcode"), {
+            text: payload,
+            width: 80,
+            height: 80,
+            colorDark : "#0f1c2e",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    }
+
+    // --- UTILITIES ---
+    function fmtMoney(num) {
+        return "$" + num.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    }
+
+    function handleError() {
+        document.querySelector('.invoice-body').innerHTML = `
+            <div style="text-align:center; padding: 40px; color:#999;">
+                <h2>NO TICKET FOUND</h2>
+                <p>Please return to home and create a booking.</p>
+                <button class="btn-sys btn-outline" style="margin:20px auto;" onclick="window.location.href='/'">Return Home</button>
+            </div>
+        `;
+    }
+
+    // --- PDF GENERATION (ISOLATED) ---
+    function generatePDF() {
+        // Select ONLY the ticket element
+        const element = document.getElementById('invoice-element');
+        
+        // Options for high-quality render
+        const opt = {
+            margin:       0.5,
+            filename:     `Ticket-${currentBooking.ref}.pdf`,
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2, useCORS: true }, // scale: 2 for Retina clarity
+            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+
+        // Execute
+        html2pdf().set(opt).from(element).save();
+    }
+</script>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Far Horizons</h3>
+                <p data-i18n="footer.desc">Your gateway to the world's most breathtaking destinations. Experience luxury, adventure, and culture with us.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3 data-i18n="footer.col_links">Quick Links</h3>
+                <ul>
+                    <li><a href="/"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Home</span></a></li>
+                    <li><a href="/Packages/"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.packages">Packages</span></a></li>
+                    <li><a href="/About_Us/"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">About Us</span></a></li>
+                    <li><a href="/Products/"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.shop">Shop</span></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 data-i18n="footer.col_contact">Contact Us</h3>
+                <div class="contact-row"><i class="fas fa-map-marker-alt"></i> <strong class="en-font">Riyadh, Saudi Arabia</strong></div>
+                <div class="contact-row"><i class="fas fa-phone-alt"></i> <div class="en-font">+966 50 000 0000</div></div>
+            </div>
+
+            <div class="footer-col">
+                <h3 data-i18n="footer.col_hours">Opening Hours</h3>
+                <ul class="en-font">
+                    <li style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>Sun - Thu:</span> <span style="color:var(--accent-color);">09:00 - 22:00</span></li>
+                    <li style="display:flex; justify-content:space-between;"><span>Friday:</span> <span style="color:var(--accent-color);">16:00 - 23:00</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 <strong>Far Horizons</strong>. <span data-i18n="footer.rights">All Rights Reserved.</span></p>
+        </div>
+    </footer>
+
+	<script src="/assets/js/main.js"></script>
+	<script src="/assets/js/pricing.js"></script>
+
+    
+    
+    
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
         }
     </script>
 </body>

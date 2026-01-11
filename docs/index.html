@@ -186,57 +186,109 @@
         </div>
     </section>
 
-    <section id="packages">
-        <div class="section-header">
-            <h2 data-i18n="packages.header">Trending Packages</h2>
-            <div class="divider"></div>
-            <p data-i18n="packages.sub">Handpicked destinations.</p>
-        </div>
+	<section class="packages">
+		<div class="section-title">
+			<h2 data-i18n="nav.packages">Popular Packages</h2>
+			<div class="underline"></div>
+		</div>
+		
+		<div class="packages-grid">
+			
+			<div class="package-card">
+				<div class="pkg-img-box"><span class="pkg-badge">Best Seller</span></div>
+				<div class="pkg-details">
+					<h4 data-i18n="packages.pkg1_title">Maldives Luxury Escape</h4>
+					<span class="pkg-price en-font">$1,500</span> <div class="pkg-features">
+						<ul>
+							<li><i class="fas fa-clock"></i> <span data-i18n="packages.pkg1_feat">5 Days</span></li>
+						</ul>
+					</div>
+					
+					<div style="display: flex; gap: 10px; margin-top: 20px; align-items: center;">
+						<div style="flex: 1;">
+							<label style="font-size: 0.8rem; color: #666; display: block; margin-bottom: 2px;">Travelers</label>
+							<input type="number" id="qty-maldives" value="1" min="1" max="15" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; text-align: center; font-weight: bold;">
+						</div>
+						<div style="flex: 2;">
+							<button onclick="savePackage('Maldives Escape', 'qty-maldives')" class="btn-main" style="width: 100%; height: 100%;" data-i18n="packages.book_btn">Book Now</button>
+						</div>
+					</div>
 
-        <div class="grid-3">
-            <div class="package-card">
-                <div class="pkg-img-box"><span class="pkg-badge">Best Seller</span></div>
-                <div class="pkg-details">
-                    <h4 data-i18n="packages.pkg1_title">Maldives Luxury Escape</h4>
-                    <span class="pkg-price en-font">$1,200</span>
-                    <div class="pkg-features">
-                        <ul>
-                            <li><i class="fas fa-clock"></i> <span data-i18n="packages.pkg1_feat">5 Days</span></li>
-                        </ul>
-                    </div>
-                    <a href="Contact_Us.html" class="btn-main" style="width: 100%; display: block; text-align: center; margin-top: 20px;" data-i18n="packages.book_btn">Book Now</a>
-                </div>
-            </div>
+				</div>
+			</div>
 
-            <div class="package-card">
-                <div class="pkg-img-box"><span class="pkg-badge">Family</span></div>
-                <div class="pkg-details">
-                    <h4 data-i18n="packages.pkg2_title">Istanbul Cultural Tour</h4>
-                    <span class="pkg-price en-font">$850</span>
-                    <div class="pkg-features">
-                        <ul>
-                            <li><i class="fas fa-clock"></i> <span data-i18n="packages.pkg2_feat">6 Days</span></li>
-                        </ul>
-                    </div>
-                    <a href="Contact_Us.html" class="btn-main" style="width: 100%; display: block; text-align: center; margin-top: 20px;" data-i18n="packages.book_btn">Book Now</a>
-                </div>
-            </div>
+			<div class="package-card">
+				<div class="pkg-img-box"><span class="pkg-badge">Cultural</span></div>
+				<div class="pkg-details">
+					<h4 data-i18n="packages.pkg2_title">Istanbul Cultural Tour</h4>
+					<span class="pkg-price en-font">$850</span>
+					<div class="pkg-features">
+						<ul>
+							<li><i class="fas fa-clock"></i> <span data-i18n="packages.pkg2_feat">6 Days</span></li>
+						</ul>
+					</div>
 
-            <div class="package-card">
-                <div class="pkg-img-box"><span class="pkg-badge">Honeymoon</span></div>
-                <div class="pkg-details">
-                    <h4 data-i18n="packages.pkg3_title">Paris & Swiss Alps</h4>
-                    <span class="pkg-price en-font">$2,100</span>
-                    <div class="pkg-features">
-                        <ul>
-                            <li><i class="fas fa-clock"></i> <span data-i18n="packages.pkg3_feat">8 Days</span></li>
-                        </ul>
-                    </div>
-                    <a href="Contact_Us.html" class="btn-main" style="width: 100%; display: block; text-align: center; margin-top: 20px;" data-i18n="packages.book_btn">Book Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
+					<div style="display: flex; gap: 10px; margin-top: 20px; align-items: center;">
+						<div style="flex: 1;">
+							<label style="font-size: 0.8rem; color: #666; display: block; margin-bottom: 2px;">Travelers</label>
+							<input type="number" id="qty-istanbul" value="1" min="1" max="15" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; text-align: center; font-weight: bold;">
+						</div>
+						<div style="flex: 2;">
+							<button onclick="savePackage('Istanbul Tour', 'qty-istanbul')" class="btn-main" style="width: 100%; height: 100%;" data-i18n="packages.book_btn">Book Now</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="package-card">
+				<div class="pkg-img-box"><span class="pkg-badge">Honeymoon</span></div>
+				<div class="pkg-details">
+					<h4 data-i18n="packages.pkg3_title">Paris & Swiss Alps</h4>
+					<span class="pkg-price en-font">$2,100</span>
+					<div class="pkg-features">
+						<ul>
+							<li><i class="fas fa-clock"></i> <span data-i18n="packages.pkg3_feat">8 Days</span></li>
+						</ul>
+					</div>
+
+					<div style="display: flex; gap: 10px; margin-top: 20px; align-items: center;">
+						<div style="flex: 1;">
+							<label style="font-size: 0.8rem; color: #666; display: block; margin-bottom: 2px;">Travelers</label>
+							<input type="number" id="qty-paris" value="1" min="1" max="15" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; text-align: center; font-weight: bold;">
+						</div>
+						<div style="flex: 2;">
+							<button onclick="savePackage('Paris & Alps', 'qty-paris')" class="btn-main" style="width: 100%; height: 100%;" data-i18n="packages.book_btn">Book Now</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+	<script>
+		function savePackage(packageName, inputId) {
+			// 1. Get the Quantity from the specific input box
+			const qtyElement = document.getElementById(inputId);
+			const quantity = qtyElement ? qtyElement.value : 1;
+
+			// 2. Get Price from DB
+			const currentPrice = getPriceFor('package', packageName);
+			
+			// 3. Save EVERYTHING (Name, Price, AND Quantity)
+			localStorage.setItem('fh_selected_package', JSON.stringify({ 
+				name: packageName, 
+				price: currentPrice,
+				passengers: quantity  // <--- Saving the user's choice!
+			}));
+			
+			// 4. Go to Contact Page
+			window.location.href = '/Contact_Us/';
+		}
+	</script>
+	
     </main>
 
     <footer>
@@ -275,7 +327,11 @@
         </div>
     </footer>
 
-    <script src="/assets/js/main.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="/assets/js/pricing.js"></script>
+
+    
+    
     
     <script>
         if (window.netlifyIdentity) {

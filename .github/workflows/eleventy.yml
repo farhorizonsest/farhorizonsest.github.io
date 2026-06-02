@@ -1,0 +1,45 @@
+name: Eleventy Build and Deploy
+
+on:
+  push:
+    branches:
+      - main  # Change to 'master' if your default branch is master
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: Provision Node.js Runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Inject Eleventy Compiler
+        run: npm install -g @11ty/eleventy
+        
+      - name: Execute Build Sequence
+        run: eleventy
+        
+      - name: Upload Compiled Payload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs' # Points to the output directory defined in .eleventy.js
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages Server
+        id: deployment
+        uses: actions/deploy-pages@v4
